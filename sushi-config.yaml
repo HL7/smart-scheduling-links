@@ -4,8 +4,8 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: fhir.example
-canonical: http://example.org
-name: ExampleIG
+canonical: https://smart-scheduling-links.org
+name: fhir-ig
 # title: Example Title
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
@@ -16,8 +16,8 @@ releaseLabel: ci-build
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
-  name: Example Publisher
-  url: http://example.org/example-publisher
+  name: SMART Scheduling Links
+  url: http://smart-scheduling-links.org/SMART-Scheduling-Links
   # email: test@example.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
@@ -76,7 +76,9 @@ publisher:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Specification: specification.html
   Artifacts: artifacts.html
+  Change Log: change-log.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
