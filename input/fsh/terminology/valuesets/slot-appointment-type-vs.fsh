@@ -5,6 +5,15 @@ Description: """
 A value set that combines the preferred and required codes from slot.appointmentType and NDH new patient extension, respectively
 """
 
+// required for hl7 auto publisher
+* ^experimental = true
+* ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension[0].valueCode = #pa
+* ^publisher = "HL7 International / Patient Administration"
+* ^contact[0].name = "HL7 International / Patient Administration"
+* ^contact[0].telecom[0].system = #url
+* ^contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/pafm"
+
 // this value set aligns with NDH & DaVinci
 // Specifically, NDH's new patient extension: https://build.fhir.org/ig/HL7/fhir-us-ndh/StructureDefinition-base-ext-newpatients.html
 // and DaVinci's modeling of accepting new patients: https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/StructureDefinition-newpatients.html
