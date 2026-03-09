@@ -2,7 +2,12 @@ Profile: SmartSchedulingSchedule
 Parent: Schedule
 Id: smart-scheduling-schedule
 Title: "Schedule"
-Description: "This profile sets the minimum expectations for a Schedule Resource."
+Description: """
+Each line of the Schedule File is a minified JSON object that conveys information about a Schedule 
+to which slots are attached. The Schedule represents a particular healthcare service (e.g., primary care 
+appointments, specialist consultations, or procedures) offered at a specific location or by a specific 
+practitioner role.
+"""
 
 // Required by base R4 Schedule
 //* actor 1..* // for notes purposes; commented out so it doesn't impact diff
