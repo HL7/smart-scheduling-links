@@ -25,7 +25,7 @@ jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 publisher:
   name: HL7 International - Patient Administration
   url: http://www.hl7.org/Special/committees/pafm/
-  # email: test@example.org
+  email: pafm@lists.hl7.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced
