@@ -9,6 +9,9 @@ name: SmartSchedulingLinks
 title: SMART Scheduling Links
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+  - valueCode: pa
 version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2026+
