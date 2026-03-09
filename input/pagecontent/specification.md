@@ -11,9 +11,9 @@ This guide explains how a _Slot Publisher_ makes an appointment slots available 
 
 ## Scheduling Architecture at a High Level
 
-**Key Actors**
+ <img src="SchedulingArchitecture.drawio.png" alt="Scheduling ER Diagram"/>
 
- <img src="/SchedulingArchitecture.drawio.png" alt="Scheduling ER Diagram"/>
+ **Key Actors**
 
  * **Slot Publisher** -- EHRs or booking portals provide a list of the available providers and slots that are available via provider organizations.  This will include all the available FHIR resources including practitioner, practitioner role, health service, location, and organizations.  Slot publishers will make vias avaiable via bulk publish speficiation. 
 
