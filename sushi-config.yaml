@@ -11,9 +11,9 @@ title: SMART Scheduling Links
 status: draft # draft | active | retired | unknown
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
-  - valueCode: pa
+    valueCode: pa
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
-  - valueInteger: 2
+    valueInteger: 2
 version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2026+
