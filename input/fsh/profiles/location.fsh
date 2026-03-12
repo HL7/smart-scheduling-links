@@ -46,8 +46,8 @@ Title: "Example Location"
 Description: "Example Location instance conforming to the SMARTLocation profile."
 Usage: #example
 * id = "44981b4a-8eae-48f7-bb7f-bf008bbe05af"
-* identifier[0].system = "https://www.openclintech.com/ids/locations"
-* identifier[0].value = "loc-001"
+* identifier.system = "https://healthsystem.example.com/facility-directory"
+* identifier.value = "FAC-PITT-001"
 
 * name = "OpenClinTech Primary Clinic"
 * status = #active

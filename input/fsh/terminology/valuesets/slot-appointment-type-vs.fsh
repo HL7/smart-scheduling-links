@@ -6,7 +6,7 @@ A value set that combines the preferred and required codes from slot.appointment
 """
 
 // required for hl7 auto publisher
-* ^experimental = true
+* ^experimental = false
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[0].valueCode = #pa
 * ^publisher = "HL7 International / Patient Administration"

@@ -23,8 +23,8 @@ releaseLabel: ci-build
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 publisher:
-  name: HL7 International - Patient Administration
-  url: http://www.hl7.org/Special/committees/pafm/
+  name: HL7 International / Patient Administration
+  url: http://www.hl7.org/Special/committees/pafm
   email: pafm@lists.hl7.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
