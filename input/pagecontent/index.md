@@ -38,7 +38,11 @@ A directory of published, bookable slots might find itself in a situation where 
 
 ### Smart Scheduling Links Architectural Diagram
 
-<img src="SchedulingArchitecture.drawio.png" style="max-width:100%; height:auto;"/>
+<div style="margin: 1rem 0; clear: both;">
+  <img src="SchedulingArchitecture.drawio.png"
+       alt="SMART Scheduling Links Architecture"
+       style="display: block; max-width: 100%; height: auto;" />
+</div>
 
 ### Dependencies
 {% lang-fragment dependency-table-nontech.xhtml %}
