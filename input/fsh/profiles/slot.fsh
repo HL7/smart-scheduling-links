@@ -30,6 +30,6 @@ Usage: #example
 * start = "2026-03-21T10:45:00-04:00"
 * end = "2026-03-21T11:15:00-04:00"
 * extension[0].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/booking-deep-link"
-* extension[=].valueUrl = "https://booking.healthsystem.org/slot/123"
+* extension[=].valueUrl = "https://ehr.example.org/booking/slots/123"
 * extension[+].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/booking-phone"
 * extension[=].valueString = "+1-555-123-4567"
