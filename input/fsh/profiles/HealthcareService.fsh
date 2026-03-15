@@ -2,7 +2,14 @@ Profile: SmartSchedulingHealthcareService
 Parent: HealthcareService
 Id: smart-scheduling-healthcare-service
 Title: "Healthcare Service"
-Description: "This profile sets minimum expections for a HealthcareService resource"
+Description: """
+The Health Service resource is used to describe a single healthcare service or 
+category of services that are provided by an organization at a location. The 
+location of the services could be virtual, as with telemedicine services. This 
+profile provides a scheduling-optimized view of healthcare service offerings, 
+enabling discovery and booking of appointments when no specific practitioner is 
+required or specified.
+"""
 * id 1..1 MS 
 * active 1..1 MS
 * providedBy 0..1 MS
