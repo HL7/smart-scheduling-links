@@ -3,7 +3,8 @@ Parent: Location
 Id: smart-scheduling-location
 Title: "Location"
 Description: """
-This profile sets minimum expectations for the Location resource to enable SMART Schedule Links use cases
+Each line of the Location File is a minified JSON object that 
+conveys a physical location where appointments are available.
 """
 
 // Align with US Core 6.1.0 
