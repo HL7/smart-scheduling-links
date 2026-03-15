@@ -2,7 +2,13 @@ Profile: SmartSchedulingSlot
 Parent: Slot
 Id: smart-scheduling-slot 
 Title: "Slot"
-Description: "This profile sets minimum expectations for a Slot Resource."
+Description: """
+Each line of the Slot File is a minified JSON object that conveys information 
+about an appointment slot. Publishers are encouraged to represent slots with 
+fine-grained timing details (e.g. representing appointments at specific times 
+of the day), but MAY represent slots with coarse grained 
+timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m.").
+"""
 
 // Note that there is no US Core 6.1.0 Slot profile
 // https://hl7.org/fhir/us/core/STU6.1/
@@ -12,6 +18,11 @@ Description: "This profile sets minimum expectations for a Slot Resource."
 // status 1..1
 // start 1..1
 // end 1..1
+
+* schedule MS
+* status MS
+* start MS
+* end MS
 * appointmentType MS
 * appointmentType from AppointmentTypeAndReasonsVS (preferred)
 
