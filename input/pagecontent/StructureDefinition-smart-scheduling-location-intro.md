@@ -20,6 +20,7 @@ The following data elements must always be present or must be supported if the d
 - position
 
 **Profile Specific Implementation Guidance:**
+
 Each `identifier` object includes a `system` and a `value`
 - If a PractitionerRole or Location is associated with organization-specific identifiers (such as facility numbers, site codes, or store numbers), publishers SHOULD include these. The `system` should be a URL that identifies the identifier system, preferably a page on the publisher's web site (e.g. `{"system": "https://healthsystem.example.com/facility-directory", "value": "FAC-123"})`
 - If a Location participates in external registry programs that assign location identifiers, publishers MAY include these identifiers using the appropriate system URL for the registry
