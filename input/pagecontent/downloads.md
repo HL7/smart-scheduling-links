@@ -168,3 +168,9 @@ The source content for this Implementation Guide is maintained on GitHub.
 ## Continuous Integration Build
 
 This site represents a Continuous Integration (CI) build and may contain changes that are not yet included in an official published version.
+
+## Cross Version Analysis
+{% include cross-version-analysis.xhtml %}
+
+## Globals Table
+{% include globals-table.xhtml %}
