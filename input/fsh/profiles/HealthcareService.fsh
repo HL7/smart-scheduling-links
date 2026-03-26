@@ -38,6 +38,7 @@ required or specified.
 
 Instance: ExampleHealhCareService
 InstanceOf: SmartSchedulingHealthcareService
+Description: "Example HealthcareService instance conforming to the SmartSchedulingHealthcareService profile."
 Usage: #example
 * active = true
 * providedBy = Reference(ExampleOrganization) "ACME Health System"
