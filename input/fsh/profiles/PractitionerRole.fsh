@@ -25,6 +25,7 @@ Description: "The PractitionerRole resource represents the specific roles that p
 Instance: ExamplePractitionerRole
 InstanceOf: SmartSchedulingPractitionerRole
 Title: "Example PractitionerRole"
+Description: "Example PractitionerRole instance conforming to the SmartSchedulingPractitionerRole."
 Usage: #example
 * id = "ad23d8f2-b88e-48af-ae96-e36f5a5fbd43"
 * identifier[0].system = "https://healthsystem.example.com/practitioner-role-directory"

@@ -31,6 +31,7 @@ practitioner role.
 Instance: ExampleSchedule
 InstanceOf: SmartSchedulingSchedule
 Title: "Example Schedule"
+Description: "Example Schedule instance conforming to the SmartSchedulingSchedule profile."
 Usage: #example
 * serviceType = $service-type#124 "General Practice"
 * actor[0] = Reference(ExampleLocation) "Berkshire Family Medicine - Pittsfield"
