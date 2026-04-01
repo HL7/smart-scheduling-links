@@ -8,7 +8,7 @@ canonical: http://hl7.org/fhir/uv/smart-scheduling-links
 name: SmartSchedulingLinks
 title: SMART Scheduling Links
 # description: Example Implementation Guide for getting started with SUSHI
-status: draft # draft | active | retired | unknown
+status: active # draft | active | retired | unknown
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: pa
