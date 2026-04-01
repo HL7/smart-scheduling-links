@@ -4,7 +4,7 @@
     "path": "http://hl7.org/fhir/uv/smart-scheduling-links/2026May",
     "mode": "working",
     "status": "ballot",
-    "sequence": "Informative 1",
+    "sequence": "STU 1",
     "desc": "SMART Scheduling Links 1.0.0 Ballot",
     "descmd": "SMART Scheduling Links 1.0.0 Ballot",
     "changes": "change_log.html",
