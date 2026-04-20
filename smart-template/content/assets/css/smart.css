@@ -1,0 +1,45 @@
+body {
+word-wrap:break-word;
+margin:0
+}
+
+html {
+font:100%/1.65 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
+}
+
+p {
+margin:0 0 10px
+}
+
+.smart-styles-alert {
+border:0px solid #4cb3d4;
+border-left-width:5px;
+border-radius:8px;
+box-shadow:0 1px 2px 0 rgba(0,0,0,.1);
+padding:16px 16px 16px 16px
+}
+
+.smart-styles-alert--info {
+background-color:#eef9fd;
+border-color:#4cb3d4
+}
+
+.smart-styles-alert--deprecated {
+background-color:whitesmoke;
+border-color:lightgrey
+}
+
+.smart-styles-admonitionIcon_kALy {
+display:inline-block;
+margin-right:.4em;
+vertical-align:middle
+}
+
+.smart-styles-admonitionIcon_kALy svg {
+fill:black;
+display:inline-block;
+height:1.6em;
+width:1.6em
+}
+
+
