@@ -55,8 +55,8 @@ A directory of published, bookable slots might find itself in a situation where 
 | Brian Fung | FHIR IG SME |
 | Brandon LaRue | Scheduling SME |
 | Ron Urgonse | Provider Data SME |
-| Josh Mandel | |
-| Dan Gotlieb | |
+| Josh Mandel | Editor |
+| Dan Gotlieb | Bulk FHIR SME |
 
 ### Intellectual Property Considerations
 This implementation guide and the underlying FHIR Specification are licensed as public domain under the FHIR license. Further, this guide includes examples making use of terminologies such as LOINC, SNOMED CT and others that have more restrictive licensing requirements. Implementers should make themselves familiar with licensing and any other constraints of terminologies and other components used as part of their implementation process. 
