@@ -769,6 +769,23 @@ This approach maintains clean separation of concerns:
 
 The _Provider Booking Portal_ is responsible for initiating holds within the scheduling system's source of truth, with the _Slot Publisher_ reflecting these state changes in subsequent publications at its discretion based on publication frequency and caching strategies.
 
+### Graceful Handling of Slot Invalidity
+
+Slot data discovered by a _Slot Discovery Client_ may no longer be valid by the time a user reaches the _Provider Booking Portal_. There are many potential sources of slot invalidity for a given user, including but not limited to:
+
+- **Staleness**: A slot may be consumed by another user between publication cycles
+- **Eligibility**: A patient may not meet provider-specific prerequisites (referrals, prior authorization, insurance, age or demographic criteria)
+- **Schedule changes**: A provider may have modified their availability after the most recent publication
+- **Business rules**: Other provider-specific or system-specific constraints may apply
+
+This specification intentionally does not prescribe how each source of invalidity should be handled, because the appropriate response depends on the implementation context. Instead, it establishes a clear division of responsibility:
+
+- **Slot Publishers** SHOULD provide data with sufficient freshness to minimize staleness (see [Performance Considerations](#performance-considerations) for Cache-Control guidance). When publishing a Slot with `"status": "free"`, Publishers should ensure the Slot is available for booking given current business rules.
+- **Slot Discovery Clients** and **Slot Aggregators** MAY enrich or filter slot data with additional attributes — such as insurance network, patient demographics, or geographic constraints — to improve the relevance of results for their users.
+- **Provider Booking Portals** are the primary backstop. As the system closest to (or identical with) the source of truth, the booking portal is best positioned to detect and handle any form of slot invalidity directly with the user. Provider Booking Portals SHOULD handle invalid slots gracefully, preserving as much of the user's original intent as possible. For example, if a specific time slot is no longer available, the booking portal SHOULD present remaining slots on or near the originally selected time and day, rather than simply displaying an error.
+
+This model parallels the [airline booking analogy](index.html#discovery-analogy-airline-booking): a travel search tool may surface a flight that is no longer available by the time the user clicks through to the airline's site, but the airline's booking system handles this gracefully by presenting close alternatives. The same user experience expectation applies here.
+
 ## Slot Aggregators
 
 Systems that re-publish data from other _Slot Publishers_ are referred to as _Slot Aggregators_. If you are a _Slot Aggregator_, you may wish to use some additional extensions and FHIR features to supply useful provenance information or describe ways that your aggregated data may not exactly match the definitions in the _SMART Scheduling Links_ specification. The practices and approaches in this section are _recommendations_; none are _required_ for a valid implementation.
