@@ -159,48 +159,6 @@ The manifest file is the entry point for a client to retrieve scheduling data. T
 }
 ```
 
-
-# Practitioner File  
-
-| **Field Name** | **Type** | **Required** | **Description** |
-| --- | --- | --- | --- |
-| `resourceType` | string | Y | Fixed value of `"Practitioner"` |
-| `id` | string | Y | Unique identifier for this practitioner (up to 64 alphanumeric characters and may include `-` and `.`) |
-| `identifier` | array of JSON objects | N | An identifier for the person as this agent |
-| → `use` | string | N | `"usual"`, `"official"`, `"temp"`, `"secondary"`, `"old"` |
-| → `system` | string | N | The namespace for the identifier value (e.g., `"http://hl7.org/fhir/sid/us-npi"`) |
-| → `value` | string | N | The value that is unique within the system |
-| `active` | boolean | N | Whether this practitioner's record is in active use |
-| `name` | array of JSON objects | N | The name(s) associated with the practitioner |
-| → `use` | string | N | `"usual"`, `"official"`, `"temp"`, `"nickname"`, `"anonymous"`, `"old"`, `"maiden"` |
-| → `text` | string | N | Full text representation of the name |
-| → `family` | string | N | Family name (surname) |
-| → `given` | array of strings | N | Given names (not always 'first'). Includes middle names |
-| → `prefix` | array of strings | N | Parts that come before the name (e.g., `"Dr."`, `"Prof."`) |
-| → `suffix` | array of strings | N | Parts that come after the name (e.g., `"Jr."`, `"MD"`) |
-| → `period` | JSON object | N | Time period when name was/is in use |
-| →   → `start` | timestamp as string | N | Start time with inclusive boundary |
-| →   → `end` | timestamp as string | N | End time with inclusive boundary |
-| `telecom` | array of JSON objects | N | Contact details for the practitioner (e.g., phone, email) |
-| → `system` | string | N | `"phone"`, `"fax"`, `"email"`, `"pager"`, `"url"`, `"sms"`, `"other"` |
-| → `value` | string | N | The actual contact point details |
-| → `use` | string | N | `"home"`, `"work"`, `"temp"`, `"old"`, `"mobile"` |
-| → `rank` | integer | N | Specify preferred order of use (1 = highest) |
-| → `period` | JSON object | N | Time period when the contact point was/is in use |
-| →   → `start` | timestamp as string | N | Start time with inclusive boundary |
-| →   → `end` | timestamp as string | N | End time with inclusive boundary |
-| `address` | array of JSON objects | N | Address(es) of the practitioner |
-| → `use` | string | N | `"home"`, `"work"`, `"temp"`, `"old"`, `"billing"` |
-| → `type` | string | N | `"postal"`, `"physical"`, `"both"` |
-| → `text` | string | N | Full text representation of the address |
-| → `line` | array of strings | N | Street name, number, direction & P.O. Box etc. |
-| → `city` | string | N | Name of city, town etc. |
-| → `district` | string | N | District name (aka county) |
-| → `state` | string | N | Sub-unit of country (abbreviations ok) |
-| → `postalCode` | string | N | Postal code for area |
-| → `country` | string | N | Country (e.g. can be ISO 3166 2 or 3 letter code) |
-| → `period` | JSON object | N | Time period when
-
 ## Schedule File
 
 Each line of the Schedule File is a minified JSON object that conveys information about a Schedule to which slots are attached. The Schedule represents a particular healthcare service (e.g., primary care appointments, specialist consultations, or procedures) offered at a specific location or by a specific practitioner role.
