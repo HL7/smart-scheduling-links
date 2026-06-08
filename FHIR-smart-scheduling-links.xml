@@ -23,6 +23,7 @@
 <artifact id="StructureDefinition/smart-scheduling-slot" key="StructureDefinition-smart-scheduling-slot" name="Slot"/>
 <artifact id="Slot/AcceptNewAndExistingPatients" key="Slot-AcceptNewAndExistingPatients" name="Slot Accepting New and Existing Patients"/>
 <artifact id="Slot/AcceptOnlyExistingPatients" key="Slot-AcceptOnlyExistingPatients" name="Slot Accepting Only Existing Patients"/>
+<artifact id="PractitionerRole/doc-smith-role" key="PractitionerRole-doc-smith-role" name="doc-smith-role"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>

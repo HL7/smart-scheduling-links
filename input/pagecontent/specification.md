@@ -159,66 +159,6 @@ The manifest file is the entry point for a client to retrieve scheduling data. T
 }
 ```
 
-## PractitionerRole File
-
-### Example `PractitionerRole`
-
-```json
-{
-  "resourceType": "PractitionerRole",
-  "id": "doc-smith-role",
-  "identifier": [{
-    "system": "https://healthsystem.example.com/practitioner-role-directory",
-    "value": "ROLE-12345"
-  }, {
-    "system": "http://hl7.org/fhir/sid/us-npi",
-    "value": "1234567890"
-  }],
-  "active": true,
-  "period": {
-    "start": "2020-01-01"
-  },
-  "practitioner": {
-    "reference": "Practitioner/doc-smith",
-    "display": "Dr. John Robert Smith"
-  },
-  "organization": {
-    "reference": "Organization/berkshire-family-medicine",
-    "display": "Berkshire Family Medicine"
-  },
-  "code": [{
-    "coding": [{
-      "system": "http://snomed.info/sct",
-      "code": "309343006",
-      "display": "Physician"
-    }]
-  }],
-  "specialty": [{
-    "coding": [{
-      "system": "http://snomed.info/sct",
-      "code": "394802001",
-      "display": "General medicine"
-    }]
-  }],
-  "location": [{
-    "reference": "Location/123",
-    "display": "Berkshire Family Medicine - Pittsfield"
-  }],
-  "telecom": [{
-    "system": "phone",
-    "value": "413-555-0123"
-  }, {
-    "system": "email",
-    "value": "appointments@berkshirefamilymedicine.example.com"
-  }],
-  "availableTime": [{
-    "daysOfWeek": ["mon", "tue", "wed", "thu", "fri"],
-    "availableStartTime": "09:00:00",
-    "availableEndTime": "17:00:00"
-  }]
-}
-```
-
 ### Example PractitionerRole File
   * Example [file](https://raw.githubusercontent.com/smart-on-fhir/smart-scheduling-links/master/examples/practitionerroles.ndjson)
 
