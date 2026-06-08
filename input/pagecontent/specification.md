@@ -161,16 +161,6 @@ The manifest file is the entry point for a client to retrieve scheduling data. T
 
 ## PractitionerRole File
 
-Each line of the PractitionerRole File is a minified JSON object that represents a set of roles/locations/specialties/services that a practitioner may perform at an organization for a period of time. The PractitionerRole resource represents the specific roles that practitioners perform at organizations where appointments are available. According to the [FHIR R4 PractitionerRole definition](https://hl7.org/fhir/R4/practitionerrole.html), practitioner roles define the specific context in which practitioners provide services, including:
-
-* Primary care physician roles at specific locations
-* Specialist roles (cardiologist, dermatologist, etc.) with specific availability
-* Nursing roles for various services and locations
-* Pharmacy roles for medication management and immunizations
-* Therapy roles (physical therapy, occupational therapy, etc.)
-* Diagnostic service roles (radiology, laboratory, etc.)
-* Administrative roles that support patient care scheduling
-
 Each PractitionerRole includes at least:
 
 | field name | type | required | description |
