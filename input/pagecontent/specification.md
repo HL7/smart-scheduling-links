@@ -161,53 +161,6 @@ The manifest file is the entry point for a client to retrieve scheduling data. T
 
 ## PractitionerRole File
 
-Each PractitionerRole includes at least:
-
-| field name | type | required | description |
-| --- | --- | :---: | --- |
-| `resourceType` | string | Y | fixed value of `"PractitionerRole"` |
-| `id` | string | Y | unique identifier for this practitioner role (up to 64 alphanumeric characters and may include `-` and `.`) |
-| `identifier` | array of JSON objects | N | Business identifiers that are specific to a role/location |
-| `active` | boolean | N | Whether this practitioner role is in active use |
-| `period` | JSON object | N | The period during which the person is authorized to act as a practitioner in these role(s) for the organization |
-| &nbsp;&nbsp;&rarr;&nbsp;`start` | [timestamp](#timestamps) as string | N | Start time with inclusive boundary |
-| &nbsp;&nbsp;&rarr;&nbsp;`end` | [timestamp](#timestamps) as string | N | End time with inclusive boundary, if not ongoing |
-| `practitioner` | JSON object | N | Practitioner that is able to provide the defined services for the organization |
-| &nbsp;&nbsp;&rarr;&nbsp;`reference` | string | N | Reference to a Practitioner resource (e.g., `"Practitioner/dr-smith"`) |
-| &nbsp;&nbsp;&rarr;&nbsp;`display` | string | N | Text alternative for the resource |
-| `organization` | JSON object | N | Organization where the roles are available |
-| &nbsp;&nbsp;&rarr;&nbsp;`reference` | string | N | Reference to an Organization resource |
-| &nbsp;&nbsp;&rarr;&nbsp;`display` | string | N | Text alternative for the resource |
-| `code` | array of JSON objects | N | Roles which this practitioner may perform |
-| &nbsp;&nbsp;&rarr;&nbsp;`coding` | array of JSON objects | N | Coded representation of the role |
-| &nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;&rarr;&nbsp;`system` | string | N | The code system (e.g., `"http://snomed.info/sct"`) |
-| &nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;&rarr;&nbsp;`code` | string | N | The role code |
-| &nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;&rarr;&nbsp;`display` | string | N | Human-readable description of the role |
-| `specialty` | array of JSON objects | N | Specific specialty of the practitioner |
-| &nbsp;&nbsp;&rarr;&nbsp;`coding` | array of JSON objects | N | Coded representation of the specialty |
-| &nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;&rarr;&nbsp;`system` | string | N | The code system (e.g., `"http://snomed.info/sct"`) |
-| &nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;&rarr;&nbsp;`code` | string | N | The specialty code |
-| &nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;&rarr;&nbsp;`display` | string | N | Human-readable description of the specialty |
-| `location` | array of JSON objects | N | The location(s) at which this practitioner provides care |
-| &nbsp;&nbsp;&rarr;&nbsp;`reference` | string | N | Reference to a Location resource (e.g., `"Location/clinic-a"`) |
-| &nbsp;&nbsp;&rarr;&nbsp;`display` | string | N | Text alternative for the resource |
-| `healthcareService` | array of JSON objects | N | The list of healthcare services that this worker provides for this role's Organization/Location(s) |
-| &nbsp;&nbsp;&rarr;&nbsp;`reference` | string | N | Reference to a HealthcareService resource |
-| &nbsp;&nbsp;&rarr;&nbsp;`display` | string | N | Text alternative for the resource |
-| `telecom` | array of JSON objects | N | Contact details that are specific to the role/location/service |
-| &nbsp;&nbsp;&rarr;&nbsp;`system` | string | N | `"phone"`, `"email"`, or `"url"` |
-| &nbsp;&nbsp;&rarr;&nbsp;`value` | string | N | phone number, email address, or URL for this practitioner role |
-| `availableTime` | array of JSON objects | N | Times the practitioner is available at this location/service (if not specified, then these times are the default for all services) |
-| &nbsp;&nbsp;&rarr;&nbsp;`daysOfWeek` | array of strings | N | Days of the week. Values: `"mon"`, `"tue"`, `"wed"`, `"thu"`, `"fri"`, `"sat"`, `"sun"` |
-| &nbsp;&nbsp;&rarr;&nbsp;`allDay` | boolean | N | Always available? e.g. 24 hour service |
-| &nbsp;&nbsp;&rarr;&nbsp;`availableStartTime` | string | N | Opening time of day (ignored if allDay = true) |
-| &nbsp;&nbsp;&rarr;&nbsp;`availableEndTime` | string | N | Closing time of day (ignored if allDay = true) |
-| `notAvailable` | array of JSON objects | N | Not available during this period of time due to the provided reason |
-| &nbsp;&nbsp;&rarr;&nbsp;`description` | string | Y | Reason presented to the user explaining why time not available |
-| &nbsp;&nbsp;&rarr;&nbsp;`during` | JSON object | N | Service not available from this date/time |
-| &nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;&rarr;&nbsp;`start` | [timestamp](#timestamps) as string | N | Starting time with inclusive boundary |
-| &nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;&rarr;&nbsp;`end` | [timestamp](#timestamps) as string | N | End time with inclusive boundary |
-
 Each `identifier` object includes a `system` and a `value`. 
 
 * If a PractitionerRole is associated with organization-specific identifiers (such as role-specific employee numbers, provider numbers, or location-specific identifiers), publishers SHOULD include these. The `system` should be a URL that identifies the identifier system, preferably a page on the publisher's web site (e.g. `{"system": "https://healthsystem.example.com/practitioner-role-directory", "value": "ROLE-123"}`)
