@@ -159,8 +159,6 @@ The manifest file is the entry point for a client to retrieve scheduling data. T
 }
 ```
 
-### Example PractitionerRole File
-  * Example [file](https://raw.githubusercontent.com/smart-on-fhir/smart-scheduling-links/master/examples/practitionerroles.ndjson)
 
 # Practitioner File  
 
