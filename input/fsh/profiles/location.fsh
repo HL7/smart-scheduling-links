@@ -42,6 +42,17 @@ conveys a physical location where appointments are available.
   * latitude MS
   * longitude MS
 
+* extension contains $xver-loc-virtualService named virtualService 0..*
+* extension[virtualService] ^short = "Virtual service connection details (R5 element carried via xver extension)"
+* extension[virtualService] ^definition = "Carries the R5 Location.virtualService element (VirtualServiceDetail) for round-tripping from/to R5."
+
+* extension[virtualService].extension[channelType]
+* extension[virtualService].extension[address[x]]
+* extension[virtualService].extension[address[x]].value[x] only url
+* extension[virtualService].extension[additionalInfo]
+* extension[virtualService].extension[maxParticipants]
+* extension[virtualService].extension[sessionKey]
+
 Instance: ExampleLocation
 InstanceOf: SmartSchedulingLocation
 Title: "Example Location"
