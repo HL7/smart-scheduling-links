@@ -20,6 +20,7 @@
 <artifact id="StructureDefinition/smart-scheduling-practitioner" key="StructureDefinition-smart-scheduling-practitioner" name="Practitioner"/>
 <artifact id="StructureDefinition/smart-scheduling-practitionerRole" key="StructureDefinition-smart-scheduling-practitionerRole" name="PractitionerRole"/>
 <artifact id="StructureDefinition/smart-scheduling-schedule" key="StructureDefinition-smart-scheduling-schedule" name="Schedule"/>
+<artifact id="StructureDefinition/schedule-specialty" key="StructureDefinition-schedule-specialty" name="Schedule Specialty"/>
 <artifact id="StructureDefinition/smart-scheduling-slot" key="StructureDefinition-smart-scheduling-slot" name="Slot"/>
 <artifact id="Slot/AcceptNewAndExistingPatients" key="Slot-AcceptNewAndExistingPatients" name="Slot Accepting New and Existing Patients"/>
 <artifact id="Slot/AcceptOnlyExistingPatients" key="Slot-AcceptOnlyExistingPatients" name="Slot Accepting Only Existing Patients"/>
