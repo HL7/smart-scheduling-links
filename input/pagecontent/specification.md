@@ -171,19 +171,6 @@ The manifest file is the entry point for a client to retrieve scheduling data. T
 | `serviceType` | array of JSON objects | No | Each object is a standardized concept indicating what services are offered. The serviceType should use appropriate coding systems such as SNOMED CT or the HL7 service-type code system. For example, a general practice appointment schedule might include: <pre>[{<br>  "system": "http://terminology.hl7.org/CodeSystem/service-type",<br>  "code": "124",<br>  "display": "General Practice"<br>}]</pre> For immunization services, you might use: <pre>[{<br>  "system": "http://terminology.hl7.org/CodeSystem/service-type",<br>  "code": "57",<br>  "display": "Immunization"<br>}]</pre> Additional `serviceType`s may be included if this schedule offers multiple services; or additional `coding`s may be included to convey more nuanced information about the services offered. Multiple codings can express different levels of specificity following the FHIR convention for "codeable concepts" -- see [here](http://hl7.org/fhir/datatypes.html#codeableconcept) for details. |
 | `extension` | array of JSON objects | No | see details below |
 
-### Multiple Actors in Schedules
-
-Schedules can reference multiple actors in the `actor` array to provide more specific context about the healthcare service. Common patterns include:
-
-* **Location-only schedules**: Reference only a Location resource, indicating that appointments are available at that location but not tied to a specific practitioner role.
-* **PractitionerRole-only schedules**: Reference only a PractitionerRole resource, indicating appointments with that specific practitioner role regardless of location.
-* **Location and PractitionerRole schedules**: Reference both Location and PractitionerRole resources, indicating appointments for a specific practitioner role at a specific location. This is useful for:
-  - Multi-location practices where practitioner roles work at different sites
-  - Specialty clinics where specific practitioner roles provide services at designated locations
-  - Healthcare systems where practitioner role schedules vary by location
-
-When multiple actors are specified, all referenced resources apply to the schedule and its associated slots.
-
 ### Schedule Extensions
 	
 Each Schedule object may optionally include extension JSON objects in the Schedule's `extension` array to provide additional context about the healthcare services offered. Common extensions might include:

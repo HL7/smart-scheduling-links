@@ -8,6 +8,8 @@ Schedules can reference multiple actors in the actor array to provide more speci
   - Specialty clinics where specific practitioner roles provide services at designated locations
   - Healthcare systems where practitioner role schedules vary by location
 
+When multiple actors are specified, all referenced resources apply to the schedule and its associated slots.
+
 ### Mandatory and Must Support Data Elements
 The following data elements must always be present or must be supported if the data is present in the sending system. They are presented below in a simple human-readable explanation. Profile specific guidance and examples are provided as well. The Formal Views below provides the formal summary, definitions, and terminology requirements.
 
