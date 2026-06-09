@@ -27,8 +27,6 @@ Each `identifier` object includes a `system` and a `value`.
 
 * If a PractitionerRole is associated with organization-specific identifiers (such as role-specific employee numbers, provider numbers, or location-specific identifiers), publishers SHOULD include these. The `system` should be a URL that identifies the identifier system, preferably a page on the publisher's web site (e.g. `{"system": "https://healthsystem.example.com/practitioner-role-directory", "value": "ROLE-123"}`)
 
-* **National Provider Identifier (NPI)**: Publishers SHALL include the practitioner's NPI when available, using the system `"http://hl7.org/fhir/sid/us-npi"` and the 10-digit NPI number as the value (e.g. `{"system": "http://hl7.org/fhir/sid/us-npi", "value": "1234567890"}`)
-
 * If a PractitionerRole participates in external registry programs that assign role-specific identifiers, publishers MAY include these identifiers using the appropriate system URL for the registry.
 
 * Additional identifiers: Any number of additional identifiers MAY be included. Each should populate `system` and `value` as appropriate, following FHIR identifier conventions.
