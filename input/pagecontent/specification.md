@@ -161,10 +161,6 @@ The manifest file is the entry point for a client to retrieve scheduling data. T
 
 ## Schedule File
 
-Each line of the Schedule File is a minified JSON object that conveys information about a Schedule to which slots are attached. The Schedule represents a particular healthcare service (e.g., primary care appointments, specialist consultations, or procedures) offered at a specific location or by a specific practitioner role.
-
-Each Schedule includes at least:
-
 | **Field Name** | **Type** | **Required** | **Description** |
 |---|---|---|---|
 | `resourceType` | string | Yes | fixed value of `"Schedule"` |
