@@ -159,63 +159,6 @@ The manifest file is the entry point for a client to retrieve scheduling data. T
 }
 ```
 
-## Slot File
-
-Each line of the Slot File is a minified JSON object that conveys information about an appointment slot. Publishers are encouraged to represent slots with fine-grained timing details (e.g.  representing appointments at specific times of the day), but MAY represent slots with coarse grained timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m.").
-
-*Note: When publishing a Slot with `"status": "free"`, Publishers should ensure that the Slot is in fact available for booking, given current business rules. For example, if a provider requires certain prerequisites to be met before an appointment can be booked (such as referrals, prior authorization, or specific patient eligibility criteria), then the provider SHOULD NOT advertise the slot as available unless those requirements are satisfied.*
-
-Each `Slot` has:
-
-| field name | type | required | description |
-|---|---|:---:|---|
-| `resourceType` | string | Y | fixed value of `"Slot"` |
-| `id` | string | Y | a unique identifier for this slot (up to 64 alphanumeric characters and may include `-` and `.`) |
-| `schedule` | JSON object | Y | has a single field indicating the Schedule this slot belongs to |
-| &nbsp;&nbsp;&rarr;&nbsp;`reference` | string | Y | the schedule for this slot formed as `Schedule` + `/` + the `id` value of an entry in a Schedule File (e.g., `"Schedule/123"`). |
-| `status` | string | Y | `"free"`, `"busy"`, `"busy-tentative"`, or `"busy-unavailable"`. The `"busy-tentative"` status indicates a slot is temporarily held (see [Find → Hold → Book Pattern](#find--hold--book-pattern)). |
-| `start` | [timestamp](#timestamps) as string | Y | the start time of this slot. Together `start` and `end` SHOULD identify a narrow window of time for the appointment, but MAY be as broad as the clinic's operating hours for the day, if the publisher does not support fine-grained scheduling. Timestamp SHALL be expressed with an accurate offset suffix, which SHOULD reflect the local timezone offset of the Location this slot belongs to (e.g., `-05:00` suffix for UTC-5) or use UTC (i.e., `Z` suffix). For example, to represent a start time of 10:45AM in America/New_York on 2021-04-21, this could be returned as either `2021-04-21T10:45:00.000-04:00` or `2021-04-21T14:45:00.000Z`.|
-| `end` | [timestamp](#timestamps) as string | Y | the end time of this slot. See notes about offset suffix for `start`.|
-| `extension` | array of JSON objects | N | see details below |
-
-Each Slot object may optionally include one or both of the following extension JSON objects in the Slot's `extension` array.
-
-* "Booking link" extension: used to convey a web link into the Provider Booking Portal (see [below](#deep-links-hosted-by-provider-booking-portal)) where the user can begin booking this slot.
-
-	| field name | type  | description |
-	|---|---|---|
-	|`url`| string | fixed value of `"http://fhir-registry.smarthealthit.org/StructureDefinition/booking-deep-link"`|
-	|`valueUrl` | string | URL that's a deep link into the Provider Booking Portal |
-
-* "Booking phone" extension: used to convey a phone number the user can call to book this slot.
-
-	| field name | type  | description |
-	|---|---|---|
-	|`url`| string | fixed value of `"http://fhir-registry.smarthealthit.org/StructureDefinition/booking-phone"`|
-	|`valueString` | string | Phone number the user can call to book this slot.
-
-
-### Example `Slot`
-```json
-{
-  "resourceType": "Slot",
-  "id": "789",
-  "schedule": {
-    "reference": "Schedule/456"
-  },
-  "status": "free",
-  "start": "2021-03-10T15:00:00-05",
-  "end": "2021-03-10T15:20:00-05",
-  "extension": [{
-    "url": "http://fhir-registry.smarthealthit.org/StructureDefinition/booking-deep-link",
-    "valueUrl": "https://ehr-portal.example.org/bookings?slot=opaque-slot-handle-89172489"
-  }]
-}
-```
-
-### Example Slot File
-  * Example [file](https://raw.githubusercontent.com/smart-on-fhir/smart-scheduling-links/master/examples/slots-2021-W09.ndjson)
-
 ## Healthcare Service Resource
 
 The Health Service resource is used to describe a single healthcare service or category of services that are provided by an organization at a location. The location of the services could be virtual, as with telemedicine services. This profile provides a scheduling-optimized view of healthcare service offerings, enabling discovery and booking of appointments when no specific practitioner is required or specified.
