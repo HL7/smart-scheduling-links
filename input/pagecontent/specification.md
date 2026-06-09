@@ -53,18 +53,18 @@ Concretely, a _Slot Publisher_ hosts six kinds of files:
   * [Details on JSON structure](#manifest-file)
   * [Example file](https://raw.githubusercontent.com/smart-on-fhir/smart-scheduling-links/master/examples/$bulk-publish) showing a manifest for the fictional "SMART Medicine", a regional chain with twenty locations in Massachusetts, a mix of urgent care and primary care practices. 
 * **PractitionerRole Files**.  Each line contains a minified JSON object representing a specific practitioner role that provides healthcare services where appointments are available.
-  * [Details on JSON structure](#practitionerrole-file)
+  * [PractitionerRole profile](https://build.fhir.org/ig/HL7/smart-scheduling-links/en/StructureDefinition-smart-scheduling-practitionerRole.html)
   * [Example file](https://raw.githubusercontent.com/smart-on-fhir/smart-scheduling-links/master/examples/practitionerroles.ndjson) showing ten practitioner roles for the fictional "SMART Primary Care". Each line provides details about a single PractitionerRole in the MA area.
 * **Location Files**.  Each line contains a minified JSON object representing a physical location where appointments are available.
-  * [Details on JSON structure](#location-file)
+  * [Location profile](https://build.fhir.org/ig/HL7/smart-scheduling-links/en/StructureDefinition-smart-scheduling-location.html)
 
   * [Example file](https://raw.githubusercontent.com/smart-on-fhir/smart-scheduling-links/master/examples/locations.ndjson) showing ten locations for the fictional "SMART Urgent Care". Each line provides details about a single physical location in the MA area.
 * **Schedule Files**.  Each line contains a minified JSON object representing the calendar for a healthcare service offered at a specific location or by a specific practitioner role.
 
-  * [Details on JSON structure](#schedule-file)
+  * [Schedule profile](https://build.fhir.org/ig/HL7/smart-scheduling-links/en/StructureDefinition-smart-scheduling-schedule.html)
   * [Example file](https://raw.githubusercontent.com/smart-on-fhir/smart-scheduling-links/master/examples/schedules.ndjson) showing ten schedules schedules for "SMART Primary Care" and ten schedules for "SMART Urgent Care." Each line provides details about a single schedule.
 * **Slot Files**.  Each line contains a minified JSON object representing an appointment slot (busy or free) for a healthcare service at a specific location.
-  * [Details on JSON structure](#slot-file)
+  * [Slot profile](https://build.fhir.org/ig/HL7/smart-scheduling-links/en/StructureDefinition-smart-scheduling-slot.html)
   * [Example file](https://raw.githubusercontent.com/smart-on-fhir/smart-scheduling-links/master/examples/slots-2021-W09.ndjson) showing coarse-grained slots for a single week, across all twenty "SMART Medicine" sites. (_Note: The choice to break down slots into weekly files is arbitrary; the fictional Clinic could instead choose to host a single slot file, or produce location-specific files, or even group slots randomly._) Slots MAY include only coarse-grained timing (indicating they fall sometime beetween 9a and 6p ET, the clinic's fictional hours of operation). Ideally, Slot Publishers SHOULD provide finer-grained slot information with specific timing.
 
 A client queries the manifest on a regular basis, e.g. once every 1-5 minutes. The client iterates through the links in the manifest file to retrieve any PractitionerRole, Location, Schedule, or Slot files it is interested in. (Clients SHOULD ignore any output items with types other than PractitionerRole, Location, Schedule, or Slot.)
