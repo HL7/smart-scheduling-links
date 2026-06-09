@@ -28,10 +28,12 @@ practitioner role.
 Instance: ExampleSchedule
 InstanceOf: SmartSchedulingSchedule
 Title: "Example Schedule"
-Description: "This example demonstrates a Schedule with multiple actors, indicating that general practice appointments are available for practitioner role "doc-smith-role" at location "123". This pattern is commonly used when a specific practitioner role provides services at a specific location."
+Description: """
+This example demonstrates a Schedule with multiple actors, indicating that general practice appointments are available for practitioner role "doc-smith-role" at location "123". This pattern is commonly used when a specific practitioner role provides services at a specific location.
+"""
 Usage: #example
 * serviceType = $service-type#124 "General Practice"
-* actor[0] = Reference(ExampleLocation) "Berkshire Family Medicine - Pittsfield"
+* actor[+] = Reference(ExampleLocation) "Berkshire Family Medicine - Pittsfield"
 * actor[+] = Reference(ExamplePractitionerRole) "Dr. John Robert Smith"
-* extension[+].url = "http://fhir-registry.smarthealthit.org/StructureDefinition/specialty"
+* extension[+].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/schedule-specialty"
 * extension[=].valueCoding = $sct#394802001 "General medicine"
