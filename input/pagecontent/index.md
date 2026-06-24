@@ -55,7 +55,7 @@ A directory of published, bookable slots might find itself in a situation where 
 | Adam Culbertson, Adamculby@gmail.com | Product Owner |
 | Brian Fung | FHIR IG SME |
 | Brandon LaRue | Scheduling SME |
-| Ron Urgonse | Provider Data SME |
+| Ron Urwongse | Provider Data SME |
 | Josh Mandel | Editor |
 | Dan Gotlieb | Bulk FHIR SME |
 
