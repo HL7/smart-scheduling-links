@@ -23,16 +23,17 @@ practitioner role.
   * reference 1..1 MS // original
   * display MS // from proposed
 * serviceType 1..* MS // from both
-
-// TODO - add the schedule extension - note that it likely is semantically duplicative with serviceType and can likely
-// be deprecrated
-
+* extension contains schedule-specialty named specialty 0..*
 
 Instance: ExampleSchedule
 InstanceOf: SmartSchedulingSchedule
 Title: "Example Schedule"
-Description: "Example Schedule instance conforming to the SmartSchedulingSchedule profile."
+Description: """
+This example demonstrates a Schedule with multiple actors, indicating that general practice appointments are available for practitioner role "doc-smith-role" at location "123". This pattern is commonly used when a specific practitioner role provides services at a specific location.
+"""
 Usage: #example
 * serviceType = $service-type#124 "General Practice"
-* actor[0] = Reference(ExampleLocation) "Berkshire Family Medicine - Pittsfield"
+* actor[+] = Reference(ExampleLocation) "Berkshire Family Medicine - Pittsfield"
 * actor[+] = Reference(ExamplePractitionerRole) "Dr. John Robert Smith"
+* extension[+].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/schedule-specialty"
+* extension[=].valueCoding = $sct#394802001 "General medicine"

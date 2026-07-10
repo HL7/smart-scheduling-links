@@ -2,7 +2,17 @@ Profile: SmartSchedulingPractitionerRole
 Parent: PractitionerRole
 Id: smart-scheduling-practitionerRole
 Title: "PractitionerRole"
-Description: "The PractitionerRole resource represents the specific roles that practitioners perform at organizations where appointments are available"
+Description: """
+Each line of the PractitionerRole File is a minified JSON object that represents a set of roles/locations/specialties/services that a practitioner may perform at an organization for a period of time. The PractitionerRole resource represents the specific roles that practitioners perform at organizations where appointments are available. According to the [FHIR R4 PractitionerRole definition](https://hl7.org/fhir/R4/practitionerrole.html), practitioner roles define the specific context in which practitioners provide services, including:
+
+* Primary care physician roles at specific locations
+* Specialist roles (cardiologist, dermatologist, etc.) with specific availability
+* Nursing roles for various services and locations
+* Pharmacy roles for medication management and immunizations
+* Therapy roles (physical therapy, occupational therapy, etc.)
+* Diagnostic service roles (radiology, laboratory, etc.)
+* Administrative roles that support patient care scheduling
+"""
 * id 1..1 MS 
 * identifier 0..* MS 
 * active 0..1 MS 
@@ -43,3 +53,29 @@ Usage: #example
 * telecom[=].value = "413-555-0123"
 * telecom[+].system = #email
 * telecom[=].value = "appointments@berkshirefamilymedicine.example.com"
+
+Instance: doc-smith-role
+InstanceOf: SmartSchedulingPractitionerRole
+Usage: #example
+* identifier[0].system = "https://healthsystem.example.com/practitioner-role-directory"
+* identifier[=].value = "ROLE-12345"
+* identifier[+].system = "http://hl7.org/fhir/sid/us-npi"
+* identifier[=].value = "1234567890"
+* active = true
+* period.start = "2020-01-01"
+* practitioner = Reference(Practitioner/doc-smith) "Dr. John Robert Smith"
+* organization = Reference(Organization/berkshire-family-medicine) "Berkshire Family Medicine"
+* code = $sct#309343006 "Physician"
+* specialty = $sct#394802001 "General medicine"
+* location = Reference(Location/123) "Berkshire Family Medicine - Pittsfield"
+* telecom[0].system = #phone
+* telecom[=].value = "413-555-0123"
+* telecom[+].system = #email
+* telecom[=].value = "appointments@berkshirefamilymedicine.example.com"
+* availableTime.daysOfWeek[0] = #mon
+* availableTime.daysOfWeek[+] = #tue
+* availableTime.daysOfWeek[+] = #wed
+* availableTime.daysOfWeek[+] = #thu
+* availableTime.daysOfWeek[+] = #fri
+* availableTime.availableStartTime = "09:00:00"
+* availableTime.availableEndTime = "17:00:00"
