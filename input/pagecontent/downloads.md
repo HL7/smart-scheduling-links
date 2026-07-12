@@ -2,7 +2,7 @@ This page provides downloadable versions of the SMART Scheduling Links Implement
 
 ---
 
-## Implementation Guide Package
+### Implementation Guide Package
 
 The FHIR package contains all conformance resources defined in this Implementation Guide (profiles, extensions, value sets, code systems, etc.). This package can be used with FHIR tooling such as IG Publisher, validators, and terminology services.
 
@@ -10,7 +10,7 @@ The FHIR package contains all conformance resources defined in this Implementati
 
 ---
 
-## Full Implementation Guide
+### Full Implementation Guide
 
 A full downloadable copy of the rendered Implementation Guide.
 
@@ -20,7 +20,7 @@ This includes the complete set of HTML pages and supporting files required to br
 
 ---
 
-## Definitions
+### Definitions
 
 The definitions archives contain machine-readable representations of the conformance resources defined by this Implementation Guide.
 - [JSON](../definitions.json.zip)
@@ -31,7 +31,7 @@ These archives contain the StructureDefinitions, ValueSets, CodeSystems, and oth
 
 ---
 
-## Examples
+### Examples
 
 Example resources demonstrating usage of this specification.
 - [JSON](../examples.json.zip)
@@ -40,8 +40,8 @@ Example resources demonstrating usage of this specification.
 
 ---
 
-## Cross Version Analysis
+### Cross Version Analysis
 {% include cross-version-analysis.xhtml %}
 
-## Globals Table
+### Globals Table
 {% include globals-table.xhtml %}
