@@ -20,6 +20,7 @@ practitioner role.
 // https://github.com/Culby/smart-scheduling-links/blob/master/specification.md#schedule-file
 // actor references location (like the original), but also the PractitionerRole
 * actor MS
+* actor only Reference(SmartSchedulingPractitioner or SmartSchedulingPractitionerRole or SmartSchedulingHealthcareService or SmartSchedulingLocation or Patient or RelatedPerson or Device)
   * reference 1..1 MS // original
   * display MS // from proposed
 * serviceType 1..* MS // from both

@@ -22,7 +22,7 @@ Each line of the PractitionerRole File is a minified JSON object that represents
 * practitioner 0..1 MS
 * practitioner only Reference(SmartSchedulingPractitioner) 
 * organization 0..1 MS
-* organization only Reference(Organization)
+//* organization only Reference(Organization) R4 already does this; removing to avoid diff noise
 * code 0..* MS 
 * specialty 0..* MS 
 * location 0..* MS 
