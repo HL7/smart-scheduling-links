@@ -1,8 +1,4 @@
-### Downloads
-
-This page provides downloadable versions of the SMART Scheduling Links Implementation Guide and its related artifacts.
-
-These files are automatically generated as part of the IG build process and can be used by implementers for offline use, tooling, or integration into development environments.
+This page provides downloadable versions of the SMART Scheduling Links Implementation Guide and its related artifacts. These files are automatically generated as part of the IG build process and can be used by implementers for offline use, tooling, or integration into development environments.
 
 ---
 
@@ -27,18 +23,9 @@ This includes the complete set of HTML pages and supporting files required to br
 ## Definitions
 
 The definitions archives contain machine-readable representations of the conformance resources defined by this Implementation Guide.
-
-### JSON
-
-- [Definitions JSON](../definitions.json.zip)
-
-### XML
-
-- [Definitions XML](../definitions.xml.zip)
-
-### Turtle
-
-- [Definitions Turtle](../definitions.ttl.zip)
+- [JSON](../definitions.json.zip)
+- [XML](../definitions.xml.zip)
+- [Turtle](../definitions.ttl.zip)
 
 These archives contain the StructureDefinitions, ValueSets, CodeSystems, and other conformance resources published by this IG.
 
@@ -47,78 +34,9 @@ These archives contain the StructureDefinitions, ValueSets, CodeSystems, and oth
 ## Examples
 
 Example resources demonstrating usage of this specification.
-
-### JSON
-
-- [Examples JSON](../examples.json.zip)
-
-### XML
-
-- [Examples XML](../examples.xml.zip)
-
-### Turtle
-
-- [Examples Turtle](../examples.ttl.zip)
-
----
-
-## Additional Files
-
-
-
-## Implementation Guide Package
-
-The FHIR package contains all conformance resources defined in this Implementation Guide (profiles, extensions, value sets, code systems, etc.). This package can be used with FHIR tooling such as IG Publisher, validators, and terminology services.
-
-- [FHIR NPM Package (package.tgz)](../package.tgz)
-
----
-
-## Full Implementation Guide
-
-A full downloadable copy of the rendered Implementation Guide.
-
-- [Full IG Download (full-ig.zip)](../full-ig.zip)
-
-This includes the complete set of HTML pages and supporting files required to browse the guide offline.
-
----
-
-## Definitions
-
-The definitions archives contain machine-readable representations of the conformance resources defined by this Implementation Guide.
-
-### JSON
-
-- [Definitions JSON](../definitions.json.zip)
-
-### XML
-
-- [Definitions XML](../definitions.xml.zip)
-
-### Turtle
-
-- [Definitions Turtle](../definitions.ttl.zip)
-
-These archives contain the StructureDefinitions, ValueSets, CodeSystems, and other conformance resources published by this IG.
-
----
-
-## Examples
-
-Example resources demonstrating usage of this specification.
-
-### JSON
-
-- [Examples JSON](../examples.json.zip)
-
-### XML
-
-- [Examples XML](../examples.xml.zip)
-
-### Turtle
-
-- [Examples Turtle](../examples.ttl.zip)
+- [JSON](../examples.json.zip)
+- [XML](../examples.xml.zip)
+- [Turtle](../examples.ttl.zip)
 
 ---
 
