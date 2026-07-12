@@ -64,15 +64,7 @@ Example resources demonstrating usage of this specification.
 
 ## Additional Files
 
-Additional files generated during the build process.
 
-- [QA Report](### Downloads
-
-This page provides downloadable versions of the SMART Scheduling Links Implementation Guide and its related artifacts.
-
-These files are automatically generated as part of the IG build process and can be used by implementers for offline use, tooling, or integration into development environments.
-
----
 
 ## Implementation Guide Package
 
@@ -129,45 +121,6 @@ Example resources demonstrating usage of this specification.
 - [Examples Turtle](../examples.ttl.zip)
 
 ---
-
-## Additional Files
-
-Additional files generated during the build process.
-
-- [QA Report](qa.html)
-
-The QA report contains validation results and build diagnostics for the current CI build.
-
----
-
-## Source Repository
-
-The source content for this Implementation Guide is maintained on GitHub.
-
-- https://github.com/HL7/smart-scheduling-links
-
----
-
-## Continuous Integration Build
-
-This site represents a Continuous Integration (CI) build and may contain changes that are not yet included in an official published version.
-qa.html)
-
-The QA report contains validation results and build diagnostics for the current CI build.
-
----
-
-## Source Repository
-
-The source content for this Implementation Guide is maintained on GitHub.
-
-- https://github.com/HL7/smart-scheduling-links
-
----
-
-## Continuous Integration Build
-
-This site represents a Continuous Integration (CI) build and may contain changes that are not yet included in an official published version.
 
 ## Cross Version Analysis
 {% include cross-version-analysis.xhtml %}
