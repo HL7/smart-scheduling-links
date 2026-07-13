@@ -4,9 +4,9 @@ What if booking clinical appointments looked more like booking airline tickets? 
 
 ### Scope and Purpose
 "SMART Scheduling Links" is a standards-based specification enabling patients to:
-- **find appointment slots** using an appointment booking tool of their choice, searching by geography, specialty, health system, etc
-- **follow a deep link** into the provider's booking portal, to book a specific slot
-- **complete a booking** by providing details, answering questions, or submitting referral documentation
+1. **find appointment slots** using an appointment booking tool of their choice, searching by geography, specialty, health system, etc
+2. **follow a deep link** into the provider's booking portal, to book a specific slot
+3. **complete a booking** by providing details, answering questions, or submitting referral documentation
 
 We are parsimoinous in our use of standards, so that:
 - step 1 is standardized with **FHIR Slot Discovery**, then
