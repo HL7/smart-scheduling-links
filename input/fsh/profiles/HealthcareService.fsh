@@ -13,7 +13,7 @@ required or specified.
 * id 1..1 MS 
 * active 1..1 MS
 * providedBy 0..1 MS
-* providedBy only Reference(Organization)
+// * providedBy only Reference(Organization) already required by base HealthcareService resource; removing to avoid diff noise
 * category 0..1 MS
 * type 1..1 MS 
 * specialty 1..1 MS 
@@ -32,9 +32,6 @@ required or specified.
 * notAvailable 0..* MS
   * description 1..1 MS
   * during 0..1 MS 
-
-
-
 
 Instance: ExampleHealhCareService
 InstanceOf: SmartSchedulingHealthcareService

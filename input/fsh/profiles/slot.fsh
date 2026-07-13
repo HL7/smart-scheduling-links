@@ -20,6 +20,7 @@ timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m.").
 // end 1..1
 
 * schedule MS
+* schedule only Reference(SmartSchedulingSchedule)
 * status MS
 * start MS
 * end MS
