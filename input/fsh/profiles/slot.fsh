@@ -44,4 +44,5 @@ Usage: #example
 * extension[0].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/booking-deep-link"
 * extension[=].valueUrl = "https://ehr.example.org/booking/slots/123"
 * extension[+].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/booking-phone"
-* extension[=].valueString = "+1-555-123-4567"
+* extension[=].valueContactPoint.system = #phone
+* extension[=].valueContactPoint.value = "+1-555-123-4567"
