@@ -8,7 +8,7 @@ What if booking clinical appointments looked more like booking airline tickets? 
 - **follow a deep link** into the provider's booking portal, to book a specific slot
 - **complete a booking** by providing details, answering questions, or submitting referral documentation
 
-We are parsimoinous in our use of standards, so that:
+We are parsimonious in our use of standards, so that:
 - step 1 is standardized with **FHIR Slot Discovery**, then
 - step 2 is standardized with **HTTPS deep-linking conventions**; meanwhile
 - step 3 **requires no standardization**, enabling flexible and provider-specific rules to govern the completion of the booking process. (To be clear, many standards facilitate step 3, but they're out of scope for SMART Scheduling Links.)
