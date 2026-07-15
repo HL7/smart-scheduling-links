@@ -1,0 +1,1 @@
+Discussed modeling approaches within the SSL Workgroup. See [notes in confluence](https://confluence.hl7.org/spaces/PA/pages/413052512/Telemedicine+visits) that discusses the modeling approaches and pro/cons for choosing this modeling direction
