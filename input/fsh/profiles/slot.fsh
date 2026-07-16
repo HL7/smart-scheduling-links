@@ -24,13 +24,14 @@ timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m.").
 * status MS
 * start MS
 * end MS
-* appointmentType MS
-* appointmentType from AppointmentTypeAndReasonsVS (preferred)
+// * appointmentType MS
+// * appointmentType from AppointmentTypeAndReasonsVS (preferred)
 
 // 
 * extension contains
     BookingDeepLink named bookingDeepLink 0..1 and
-    BookingPhone named bookingPhone 0..1
+    BookingPhone named bookingPhone 0..1 and
+    PatientType named patientType 1..1
 
 Instance: ExampleSlot
 InstanceOf: SmartSchedulingSlot
@@ -43,6 +44,11 @@ Usage: #example
 * end = "2026-03-21T11:15:00-04:00"
 * extension[0].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/booking-deep-link"
 * extension[=].valueUrl = "https://ehr.example.org/booking/slots/123"
+
 * extension[+].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/booking-phone"
 * extension[=].valueContactPoint.system = #phone
 * extension[=].valueContactPoint.value = "+1-555-123-4567"
+
+* extension[+].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/patient-type"
+* extension[=].valueCoding.system = "http://hl7.org/fhir/us/ndh/ValueSet/AcceptingPatientsVS"
+* extension[=].valueCoding.code = #newpt
