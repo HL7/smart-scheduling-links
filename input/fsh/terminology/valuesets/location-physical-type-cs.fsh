@@ -5,6 +5,10 @@ Description: """
 A code system that adds concepts for a broad physical type location and a combined virtual and physical location.
 """
 
+// required by base FHIR spec
+* ^status = #active
+* ^content = #complete
+
 // required for hl7 auto publisher
 * ^experimental = false
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
@@ -15,5 +19,5 @@ A code system that adds concepts for a broad physical type location and a combin
 * ^contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/pafm"
 
 // our code system
-* #physicalvi "Virtual and Physical" "A location that is both virtual and physical"
-* #physical   "Physical"             "A location that is physical"
+* #phvi "Physical and Virtual" "A location that is both physical and virtual"
+* #ph   "Physical"             "A location that is physical"
