@@ -1,13 +1,13 @@
-Instance: ExampleVirtualLocation
+Instance: ExampleVirtualandPhysicalLocation
 InstanceOf: SmartSchedulingLocation
-Title: "Example Virtual Only Location"
-Description: "Example Virtual only Location instance conforming to the SMART Location profile."
+Title: "Example Virtual and Physical Location"
+Description: "Example Virtual and Physical Location instance conforming to the SMART Location profile."
 Usage: #example
-* id = "44981b4a-8eae-48f7-bb7f-bf008bbe05ad"
+* id = "44981b4a-8eae-48f7-bb7f-bf008bbe35af"
 * identifier.system = "https://healthsystem.example.com/facility-directory"
 * identifier.value = "FAC-PITT-001"
 
-* name = "Virtual Telemedicine Clinic"
+* name = "Virtual and Physical Telemedicine Clinic"
 * status = #active
 
 * telecom[0].system = #phone
@@ -26,8 +26,7 @@ Usage: #example
 
 * description = "Primary outpatient clinic offering telemedicine services."
 
-* physicalType = http://hl7.org/fhir/ValueSet/location-form#vi
+* physicalType = LocationPhysicalTypeCS#phvi
 
 * extension[licensedStates][0].valueString = "FL"
 * extension[licensedStates][1].valueString = "GA"
-* extension[licensedStates][2].valueString = "AL"
