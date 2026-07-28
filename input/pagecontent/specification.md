@@ -113,7 +113,7 @@ The manifest file is the entry point for a client to retrieve scheduling data. T
 | &nbsp;&nbsp;&rarr;&nbsp;`extension` | JSON object | contains tags to help a client decide which output files to download |
 | &nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp;&rarr;&nbsp;`state` | JSON array of strings | state or jurisdiction abbreviations (e.g., `["MA"]` for a file with data pertaining solely to Massachusetts) |
 
-(For more information about this manifest file, see the [FHIR bulk data spec](http://build.fhir.org/ig/HL7/bulk-data/branches/bulk-publish/bulk-publish.html).)
+(For more information about this manifest file, see the [FHIR bulk data spec](https://build.fhir.org/ig/HL7/bulk-data).)
 
 ### Example Manifest File
 
