@@ -18,11 +18,12 @@ Usage: #example
 * telecom[1].value = "contact@smart.com"
 * telecom[1].use = #work
 
-* address.line[0] = "123 Main St"
-* address.city = "Tampa"
-* address.state = "FL"
-* address.postalCode = "33602"
-* address.district = "Hillsborough"
+// virtual locations will not require a physical address
+// * address.line[0] = "123 Main St"
+// * address.city = "Tampa"
+// * address.state = "FL"
+// * address.postalCode = "33602"
+// * address.district = "Hillsborough"
 
 * description = "Primary outpatient clinic offering telemedicine services."
 
