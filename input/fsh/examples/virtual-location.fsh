@@ -27,7 +27,7 @@ Usage: #example
 
 * description = "Primary outpatient clinic offering telemedicine services."
 
-* physicalType = http://hl7.org/fhir/ValueSet/location-form#vi
+* physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#vi
 
 * extension[licensedStates][0].valueString = "FL"
 * extension[licensedStates][1].valueString = "GA"
