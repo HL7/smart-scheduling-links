@@ -1,7 +1,7 @@
 Below is a log of changes to the HL7 SMART Scheduling Links FHIR IG.
 
 ### Current
-[Extends base SMART Scheduling Links Spec](https://github.com/smart-on-fhir/smart-scheduling-links/blob/master/specification.md) beyond the original use case to include general patient appointments.
+[Extends base SMART Scheduling Links Specification](https://github.com/smart-on-fhir/smart-scheduling-links/blob/master/specification.md) beyond the original use case to include general patient appointments.
 
 #### New Resources
 Added the following new resources
