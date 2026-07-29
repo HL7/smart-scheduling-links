@@ -177,37 +177,7 @@ In this case, if the `source` value is `source-abc` and the `booking-referral` i
 
 (Note: this construction is *not* as simple as just appending `&source=...` to the booking-deep-link, because the booking-deep-link may or may not already include URL parameters. The Slot Discovery Client must take care to parse the booking-deep-link and append parameters, e.g., including a `?` prefix if not already present.)
 
-## Find → Hold → Book Pattern
 
-### Principle
-
-This specification adheres to general guidance in FHIR scheduling to implement a **Find, Hold, Book** pattern for appointment booking. This pattern provides a robust workflow that minimizes booking conflicts while maintaining the scalability benefits of static slot publication.
-
-### Workflow Overview
-
-The recommended appointment booking workflow follows these stages:
-
-1. **Find**: Slot Discovery Clients discover available slots through the bulk publication manifest and static slot files
-2. **Hold**: When a user initiates booking, the Provider Booking Portal places a temporary hold on the selected slot within the scheduling system's source of truth
-3. **Book**: The user completes the booking process, converting the held slot to a confirmed appointment
-
-### Hold Implementation Strategy
-
-This specification recognizes that Slot Publishers and Provider Booking Portals are typically **the same organizational entity** serving different functional roles from a **unified scheduling system**, or at least both have direct access to the underlying source of truth. This unified model resolves potential consistency challenges:
-
-- **Immediate hold creation**: When a hold is placed via the Provider Booking Portal, it updates the underlying scheduling database
-- **Publication at publisher's discretion**: The next publication cycle reflects hold status changes (slots with `"status": "busy-tentative"`) in the static files
-- **Ecosystem consistency**: All discovery clients eventually see consistent hold state within the established polling intervals
-
-### Hold Initiation
-
-Provider Booking Portals SHOULD initiate slot holds automatically when:
-
-- A user lands on a booking deep link and begins the appointment booking flow
-- The booking process requires multiple steps or user input that may take significant time
-- The risk of slot conflicts justifies the overhead of hold management
-
-Holds provide a critical user experience improvement by reducing booking failures due to concurrent access while the user is actively engaged in the booking process.
 
 ### Architectural Separation
 
