@@ -20,6 +20,7 @@ timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m.").
 // end 1..1
 
 * schedule MS
+* schedule only Reference(SmartSchedulingSchedule)
 * status MS
 * start MS
 * end MS
@@ -43,4 +44,5 @@ Usage: #example
 * extension[0].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/booking-deep-link"
 * extension[=].valueUrl = "https://ehr.example.org/booking/slots/123"
 * extension[+].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/booking-phone"
-* extension[=].valueString = "+1-555-123-4567"
+* extension[=].valueContactPoint.system = #phone
+* extension[=].valueContactPoint.value = "+1-555-123-4567"
