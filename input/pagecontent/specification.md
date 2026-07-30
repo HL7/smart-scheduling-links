@@ -177,7 +177,7 @@ In this case, if the `source` value is `source-abc` and the `booking-referral` i
 
 (Note: this construction is *not* as simple as just appending `&source=...` to the booking-deep-link, because the booking-deep-link may or may not already include URL parameters. The Slot Discovery Client must take care to parse the booking-deep-link and append parameters, e.g., including a `?` prefix if not already present.)
 
-
+## Architecture and Slot Invalidity 
 
 ### Architectural Separation
 
