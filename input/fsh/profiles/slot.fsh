@@ -24,8 +24,6 @@ timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m.").
 * status MS
 * start MS
 * end MS
-// * appointmentType MS
-// * appointmentType from AppointmentTypeAndReasonsVS (preferred)
 
 // 
 * extension contains
