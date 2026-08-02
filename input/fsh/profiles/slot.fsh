@@ -50,5 +50,5 @@ Usage: #example
 * extension[=].valueContactPoint.value = "+1-555-123-4567"
 
 * extension[+].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/patient-type"
-* extension[=].valueCoding.system = "http://hl7.org/fhir/us/ndh/ValueSet/AcceptingPatientsVS"
+* extension[=].valueCoding.system = "http://terminology.hl7.org/CodeSystem/accepting-patients"
 * extension[=].valueCoding.code = #newpt

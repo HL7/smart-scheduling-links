@@ -11,7 +11,7 @@ Description: "A slot that is accepting new and existing patients"
 * end = "2026-03-21T11:15:00-04:00"
 
 * extension[+].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/patient-type"
-* extension[=].valueCoding.system = "http://hl7.org/fhir/us/ndh/ValueSet/AcceptingPatientsVS"
+* extension[=].valueCoding.system = "http://terminology.hl7.org/CodeSystem/accepting-patients"
 * extension[=].valueCoding.code = #newpt
 
 Instance: AcceptOnlyExistingPatients
@@ -27,5 +27,5 @@ Description: "A slot that is accepting only existing patients"
 * end = "2026-03-21T11:15:00-04:00"
 
 * extension[+].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/patient-type"
-* extension[=].valueCoding.system = "http://hl7.org/fhir/us/ndh/ValueSet/AcceptingPatientsVS"
+* extension[=].valueCoding.system = "http://terminology.hl7.org/CodeSystem/accepting-patients"
 * extension[=].valueCoding.code = #existptonly
