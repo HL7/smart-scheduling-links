@@ -19,5 +19,4 @@ A code system that adds concepts for a broad physical type location and a combin
 * ^contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/pafm"
 
 // our code system
-* #phvi "Physical and Virtual" "A location that is both physical and virtual"
 * #ph   "Physical"             "A location that is physical"
