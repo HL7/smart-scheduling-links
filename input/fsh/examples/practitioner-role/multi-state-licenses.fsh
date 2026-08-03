@@ -9,9 +9,9 @@ Usage: #example
 * organization = Reference(ExampleOrganization)
 * code = $sct#309343006 "Physician"
 * specialty = $sct#394802001 "General medicine"
-* location[+] = Reference(FloridaLocation)
-* location[+] = Reference(WashingtonLocation)
-* location[+] = Reference(VirginiaLocation)
+* location[+] = Reference(FloridaLocation) "Florida Location"
+* location[+] = Reference(WashingtonLocation) "Washington Location"
+* location[+] = Reference(VirginiaLocation) "Virginia Location"
 * telecom[0].system = #phone
 * telecom[=].value = "413-555-0123"
 * telecom[+].system = #email
