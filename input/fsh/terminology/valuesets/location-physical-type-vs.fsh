@@ -20,4 +20,3 @@ A value set that defines the physical type of a location but adds the virtual lo
 * include codes from system LocationPhysicalTypeCS
 
 //* http://hl7.org/fhir/ValueSet/location-form#vi "Virtual"
-
