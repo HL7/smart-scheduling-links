@@ -26,10 +26,14 @@ timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m.").
 * end MS
 
 // 
+// Two alternative modeling approaches for patient acceptance are included for
+// discussion: the standalone patient-type extension and the characteristic
+// complex extension. A slot would use ONE of these, not both — see the examples.
 * extension contains
     BookingDeepLink named bookingDeepLink 0..1 and
     BookingPhone named bookingPhone 0..1 and
-    PatientType named patientType 1..1
+    PatientType named patientType 0..1 and
+    SlotCharacteristic named characteristic 0..1
 
 Instance: ExampleSlot
 InstanceOf: SmartSchedulingSlot
