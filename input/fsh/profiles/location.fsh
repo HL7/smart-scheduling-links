@@ -33,7 +33,7 @@ conveys a physical location where appointments are available.
 
 // we're loosening the restrictions on address to accommodate virtual locations
 // we are considering sub profiles to handle virtual locations and physical locations more explicitly
-// * address 1..1 MS
+* address MS
 //   * line 1..* MS
 //   * city 1..1 MS
 //   * state 1..1 MS
