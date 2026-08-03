@@ -19,6 +19,7 @@ timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m.").
 // start 1..1
 // end 1..1
 
+* id 1..1 MS
 * schedule MS
 * schedule only Reference(SmartSchedulingSchedule)
 * status MS
@@ -26,9 +27,9 @@ timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m.").
 * end MS
 
 * extension contains
-    BookingDeepLink named bookingDeepLink 0..1 and
-    BookingPhone named bookingPhone 0..1 and
-    PatientType named patientType 0..1 // double check to see if we wanted to make this required. 
+    BookingDeepLink named bookingDeepLink 0..1 MS and
+    BookingPhone named bookingPhone 0..1 MS and
+    PatientType named patientType 0..1 MS // double check to see if we wanted to make this required. 
 
 Instance: ExampleSlot
 InstanceOf: SmartSchedulingSlot
