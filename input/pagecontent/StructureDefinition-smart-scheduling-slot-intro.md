@@ -16,9 +16,9 @@ The following data elements must always be present or must be supported if the d
 - end
 
 **Each Slot Must Support:**
-- appointmentType
 - booking deep link
 - booking phone number
+- patient type
 
 **Profile Specific Implementation Guidance:**
 
