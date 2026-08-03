@@ -13,18 +13,17 @@ The following data elements must always be present or must be supported if the d
 - identifier
 - name
 - telecom
-- address line, city, state, and postalCode
 
 **Each Location Must Support:**
 - status
 - description
-- address use and district
+- address
 - physical type
 - position
 
 **Profile Specific Implementation Guidance:**
 
-The visit modality is represented using Location.physicalType data element (Location.form in R5). Implementers can use this data element to represent a virtual (#vi), physical (#ph), or physical & virtual (#phvi)
+The visit modality is represented using Location.physicalType data element (Location.form in R5). Implementers can use this data element to represent a virtual (#vi) or physical (#ph). To convey a slot that can be both virtual OR physical, implementers should model it as two separate location resources: one virtual and one physical.
 
 Each `identifier` object includes a `system` and a `value`
 - If a PractitionerRole or Location is associated with organization-specific identifiers (such as facility numbers, site codes, or store numbers), publishers SHOULD include these. The `system` should be a URL that identifies the identifier system, preferably a page on the publisher's web site (e.g. `{"system": "https://healthsystem.example.com/facility-directory", "value": "FAC-123"})`
