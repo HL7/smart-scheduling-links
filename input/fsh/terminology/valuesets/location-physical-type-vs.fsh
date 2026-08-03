@@ -15,8 +15,9 @@ A value set that defines the physical type of a location but adds the virtual lo
 * ^contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/pafm"
 
 // aligns with the preferred valueset binding for appointmentType in both appointment & slot: https://hl7.org/fhir/R4/v2/0276/index.html
-* include codes from system http://terminology.hl7.org/CodeSystem/location-physical-type
+//* include codes from system http://terminology.hl7.org/CodeSystem/location-physical-type
+* http://terminology.hl7.org/CodeSystem/location-physical-type#vi "Virtual"
 * include codes from system LocationPhysicalTypeCS
 
-* http://hl7.org/fhir/ValueSet/location-form#vi "Virtual"
+//* http://hl7.org/fhir/ValueSet/location-form#vi "Virtual"
 
