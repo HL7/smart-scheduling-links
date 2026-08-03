@@ -3,7 +3,7 @@ InstanceOf: SmartSchedulingPractitioner
 Usage: #example
 Title: "Jane Smith, MD"
 Description: "Jane Smith MD with multiple state licenses"
-* id = "fd3c7a99-bb59-4fef-9f79-88d428475ca6"
+* id = "jane-smith-md"
 * identifier.use = #usual
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "4827472855"
