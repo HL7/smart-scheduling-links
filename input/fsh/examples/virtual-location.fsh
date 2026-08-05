@@ -10,17 +10,18 @@ Usage: #example
 * name = "Virtual Telemedicine Clinic"
 * status = #active
 
-// virtual locations will not require a physical address
-// * address.line[0] = "123 Main St"
-// * address.city = "Tampa"
-// * address.state = "FL"
-// * address.postalCode = "33602"
-// * address.district = "Hillsborough"
+* telecom[0].system = #phone
+* telecom[0].value = "+1-813-555-0100"
+* telecom[0].use = #work
+
+* telecom[1].system = #email
+* telecom[1].value = "contact@openclintech.com"
+* telecom[1].use = #work
 
 * description = "Primary outpatient clinic offering telemedicine services."
 
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#vi
 
-* extension[licensedStates][0].valueString = "FL"
-* extension[licensedStates][1].valueString = "GA"
-* extension[licensedStates][2].valueString = "AL"
+* extension[licensedStates][+].valueString = "FL"
+* extension[licensedStates][+].valueString = "GA"
+* extension[licensedStates][+].valueString = "AL"
