@@ -14,4 +14,4 @@ AcceptingPatientsVS.
 * valueCoding.system 1..1
 * valueCoding.system = "http://terminology.hl7.org/CodeSystem/accepting-patients"
 * valueCoding.code 1..1
-* valueCoding.code from http://hl7.org/fhir/us/ndh/ValueSet/AcceptingPatientsVS (required)
+* valueCoding.code from http://hl7.org/fhir/us/ndh/ValueSet/AcceptingPatientsVS (extensible)
