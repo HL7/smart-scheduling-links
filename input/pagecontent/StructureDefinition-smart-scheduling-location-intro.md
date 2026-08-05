@@ -10,7 +10,6 @@ The following data elements must always be present or must be supported if the d
 
 **Each Location Must Have:**
 - id
-- identifier
 - name
 - telecom
 

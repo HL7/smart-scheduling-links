@@ -24,7 +24,6 @@ conveys a physical location where appointments are available.
 // https://github.com/smart-on-fhir/smart-scheduling-links/blob/master/specification.md
 // https://github.com/Culby/smart-scheduling-links/blob/master/specification.md
 * id 1..1 MS
-* identifier 1..* MS
 
 * name 1..1 MS
 * telecom 1..* MS
