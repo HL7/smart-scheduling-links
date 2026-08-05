@@ -29,7 +29,7 @@ timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m.").
 * extension contains
     BookingDeepLink named bookingDeepLink 0..1 MS and
     BookingPhone named bookingPhone 0..1 MS and
-    PatientType named patientType 0..1 MS // double check to see if we wanted to make this required. 
+    PatientType named patientType 1..1 MS // double check to see if we wanted to make this required. 
 
 Instance: ExampleSlot
 InstanceOf: SmartSchedulingSlot
