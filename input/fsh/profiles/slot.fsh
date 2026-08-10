@@ -19,18 +19,17 @@ timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m.").
 // start 1..1
 // end 1..1
 
+* id 1..1 MS
 * schedule MS
 * schedule only Reference(SmartSchedulingSchedule)
 * status MS
 * start MS
 * end MS
-* appointmentType MS
-* appointmentType from AppointmentTypeAndReasonsVS (preferred)
 
-// 
 * extension contains
-    BookingDeepLink named bookingDeepLink 0..1 and
-    BookingPhone named bookingPhone 0..1
+    BookingDeepLink named bookingDeepLink 0..1 MS and
+    BookingPhone named bookingPhone 0..1 MS and
+    PatientType named patientType 1..1 MS // double check to see if we wanted to make this required. 
 
 Instance: ExampleSlot
 InstanceOf: SmartSchedulingSlot
@@ -43,6 +42,11 @@ Usage: #example
 * end = "2026-03-21T11:15:00-04:00"
 * extension[0].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/booking-deep-link"
 * extension[=].valueUrl = "https://ehr.example.org/booking/slots/123"
+
 * extension[+].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/booking-phone"
 * extension[=].valueContactPoint.system = #phone
 * extension[=].valueContactPoint.value = "+1-555-123-4567"
+
+* extension[+].url = "http://hl7.org/fhir/uv/smart-scheduling-links/StructureDefinition/patient-type"
+* extension[=].valueCoding.system = "http://terminology.hl7.org/CodeSystem/accepting-patients"
+* extension[=].valueCoding.code = #newpt
