@@ -30,21 +30,28 @@ conveys a physical location where appointments are available.
   * system 1..1 MS
   * value 1..1 MS
 
-* address 1..1 MS
-  * line 1..* MS
-  * city 1..1 MS
-  * state 1..1 MS
-  * postalCode 1..1 MS
-  * district MS
+// we're loosening the restrictions on address to accommodate virtual locations
+// we are considering sub profiles to handle virtual locations and physical locations more explicitly
+* address MS
+//   * line 1..* MS
+//   * city 1..1 MS
+//   * state 1..1 MS
+//   * postalCode 1..1 MS
+//   * district MS
 * description MS
 * position MS
   * latitude MS
   * longitude MS
 
-* extension contains $xver-loc-virtualService named virtualService 0..*
+* physicalType MS
+* physicalType from LocationPhysicalTypeVS (preferred)
+
+* extension contains 
+    $xver-loc-virtualService named virtualService 0..* and 
+    LicensedStates named licensedStates 0..*
+
 * extension[virtualService] ^short = "Virtual service connection details (R5 element carried via xver extension)"
 * extension[virtualService] ^definition = "Carries the R5 Location.virtualService element (VirtualServiceDetail) for round-tripping from/to R5."
-
 * extension[virtualService].extension[channelType]
 * extension[virtualService].extension[address[x]]
 * extension[virtualService].extension[address[x]].value[x] only url
@@ -52,10 +59,13 @@ conveys a physical location where appointments are available.
 * extension[virtualService].extension[maxParticipants]
 * extension[virtualService].extension[sessionKey]
 
+* extension[licensedStates] ^short = "Licensed states for the location."
+* extension[licensedStates] ^definition = "Carries the licensed states for the location. This is a subset of locations where a practitioner is licensed to practice in."
+
 Instance: ExampleLocation
 InstanceOf: SmartSchedulingLocation
-Title: "Example Location"
-Description: "Example Location instance conforming to the SMARTLocation profile."
+Title: "Example Physical only Location"
+Description: "Example Physical only Location instance conforming to the SMARTLocation profile."
 Usage: #example
 * id = "44981b4a-8eae-48f7-bb7f-bf008bbe05af"
 * identifier.system = "https://healthsystem.example.com/facility-directory"
@@ -77,6 +87,8 @@ Usage: #example
 * address.state = "FL"
 * address.postalCode = "33602"
 * address.district = "Hillsborough"
+
+* physicalType = LocationPhysicalTypeCS#ph
 
 * description = "Primary outpatient clinic offering general services."
 
