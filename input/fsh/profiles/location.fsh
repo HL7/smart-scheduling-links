@@ -47,17 +47,8 @@ conveys a physical location where appointments are available.
 * physicalType from LocationPhysicalTypeVS (preferred)
 
 * extension contains 
-    $xver-loc-virtualService named virtualService 0..* and 
+    $xver-loc-virtualService named virtualService 0..* and
     LicensedStates named licensedStates 0..*
-
-* extension[virtualService] ^short = "Virtual service connection details (R5 element carried via xver extension)"
-* extension[virtualService] ^definition = "Carries the R5 Location.virtualService element (VirtualServiceDetail) for round-tripping from/to R5."
-* extension[virtualService].extension[channelType]
-* extension[virtualService].extension[address[x]]
-* extension[virtualService].extension[address[x]].value[x] only url
-* extension[virtualService].extension[additionalInfo]
-* extension[virtualService].extension[maxParticipants]
-* extension[virtualService].extension[sessionKey]
 
 * extension[licensedStates] ^short = "Licensed states for the location."
 * extension[licensedStates] ^definition = "Carries the licensed states for the location. This is a subset of locations where a practitioner is licensed to practice in."

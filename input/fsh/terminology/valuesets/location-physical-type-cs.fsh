@@ -1,6 +1,6 @@
 CodeSystem: LocationPhysicalTypeCS
 Id: location-physical-type-cs
-Title: "Location Physical Type"
+Title: "Location Physical Type CodeSystem"
 Description: """
 A code system that adds concepts for a broad physical type location and a combined virtual and physical location.
 """
@@ -8,6 +8,7 @@ A code system that adds concepts for a broad physical type location and a combin
 // required by base FHIR spec
 * ^status = #active
 * ^content = #complete
+* ^caseSensitive = true // required for hl7 codesystems; must conform to shareable codesystem profile
 
 // required for hl7 auto publisher
 * ^experimental = false

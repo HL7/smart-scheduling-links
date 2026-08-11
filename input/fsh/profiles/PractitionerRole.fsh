@@ -56,6 +56,8 @@ Usage: #example
 
 Instance: doc-smith-role
 InstanceOf: SmartSchedulingPractitionerRole
+Title: "Doc Smith PractitionerRole"
+Description: "Example Doc SmithPractitionerRole instance conforming to the SmartSchedulingPractitionerRole."
 Usage: #example
 * identifier[0].system = "https://healthsystem.example.com/practitioner-role-directory"
 * identifier[=].value = "ROLE-12345"
@@ -63,11 +65,11 @@ Usage: #example
 * identifier[=].value = "1234567890"
 * active = true
 * period.start = "2020-01-01"
-* practitioner = Reference(Practitioner/doc-smith) "Dr. John Robert Smith"
-* organization = Reference(Organization/berkshire-family-medicine) "Berkshire Family Medicine"
+* practitioner = Reference(ExamplePractitioner) "Dr. John Robert Smith"
+* organization = Reference(ExampleOrganization) "Berkshire Family Medicine"
 * code = $sct#309343006 "Physician"
 * specialty = $sct#394802001 "General medicine"
-* location = Reference(Location/123) "Berkshire Family Medicine - Pittsfield"
+* location = Reference(ExampleLocation) "Berkshire Family Medicine - Pittsfield"
 * telecom[0].system = #phone
 * telecom[=].value = "413-555-0123"
 * telecom[+].system = #email
