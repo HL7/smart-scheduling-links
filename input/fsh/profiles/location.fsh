@@ -50,26 +50,6 @@ conveys a physical location where appointments are available.
     $xver-loc-virtualService named virtualService 0..* and
     LicensedStates named licensedStates 0..*
 
-// * extension[virtualService] ^short = "Virtual service connection details (R5 element carried via xver extension)"
-// * extension[virtualService] ^definition = "Carries the R5 Location.virtualService element (VirtualServiceDetail) for round-tripping from/to R5."
-
-// * extension[virtualService] obeys ssl-vsd-url-only
-// * extension[virtualService].extension[channelType]
-// * extension[virtualService].extension[address]
-// * extension[virtualService].extension[additionalInfo]
-// * extension[virtualService].extension[maxParticipants]
-// * extension[virtualService].extension[sessionKey]
-
-// // xver 0.1.0 makes the _datatype sub-extension 1..1, so `value[x] only url` is no longer
-// // expressible on the address slice (it would force extension to 0..0). It is stated as an
-// // invariant instead, anchored on virtualService rather than on the address slice: xver 0.1.0
-// // declares Extension.extension:address.extension as min 0 while its _datatype slice is min 1,
-// // so constraining into that sub-tree drags that inconsistency into our snapshot.
-// Invariant: ssl-vsd-url-only
-// Description: "The virtual service address SHALL be conveyed as a url."
-// Severity: #error
-// Expression: "extension.where(url = 'address').value.exists() implies extension.where(url = 'address').value.ofType(FHIR.url).exists()"
-
 * extension[licensedStates] ^short = "Licensed states for the location."
 * extension[licensedStates] ^definition = "Carries the licensed states for the location. This is a subset of locations where a practitioner is licensed to practice in."
 
