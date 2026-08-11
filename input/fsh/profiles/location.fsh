@@ -43,8 +43,13 @@ conveys a physical location where appointments are available.
   * latitude MS
   * longitude MS
 
+* physicalType MS
+* physicalType from LocationPhysicalTypeVS (preferred)
+
 * extension contains 
-    $xver-loc-virtualService named virtualService 0..*
+    $xver-loc-virtualService named virtualService 0..* and
+    LicensedStates named licensedStates 0..*
+
 // * extension[virtualService] ^short = "Virtual service connection details (R5 element carried via xver extension)"
 // * extension[virtualService] ^definition = "Carries the R5 Location.virtualService element (VirtualServiceDetail) for round-tripping from/to R5."
 
