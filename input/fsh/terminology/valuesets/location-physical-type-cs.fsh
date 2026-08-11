@@ -1,6 +1,6 @@
 CodeSystem: LocationPhysicalTypeCS
 Id: location-physical-type-cs
-Title: "Location Physical Type"
+Title: "Location Physical Type CodeSystem"
 Description: """
 A code system that adds concepts for a broad physical type location and a combined virtual and physical location.
 """
