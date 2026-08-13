@@ -47,11 +47,7 @@ conveys a physical location where appointments are available.
 * physicalType from LocationPhysicalTypeVS (preferred)
 
 * extension contains 
-    $xver-loc-virtualService named virtualService 0..* and
-    LicensedStates named licensedStates 0..*
-
-* extension[licensedStates] ^short = "Licensed states for the location."
-* extension[licensedStates] ^definition = "Carries the licensed states for the location. This is a subset of locations where a practitioner is licensed to practice in."
+    $xver-loc-virtualService named virtualService 0..*
 
 Instance: ExampleLocation
 InstanceOf: SmartSchedulingLocation

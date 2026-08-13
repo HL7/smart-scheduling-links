@@ -1,5 +1,5 @@
 Instance: ExampleVirtualLocation
-InstanceOf: SmartSchedulingVirtualLocation
+InstanceOf: SmartSchedulingLocation
 Title: "Example Virtual Only Location"
 Description: "Example Virtual only Location instance conforming to the SMART Virtual Location profile."
 Usage: #example
@@ -21,7 +21,3 @@ Usage: #example
 * description = "Primary outpatient clinic offering telemedicine services."
 
 * physicalType = http://terminology.hl7.org/CodeSystem/location-physical-type#vi
-
-* extension[licensedStates][+].valueString = "FL"
-* extension[licensedStates][+].valueString = "GA"
-* extension[licensedStates][+].valueString = "AL"
