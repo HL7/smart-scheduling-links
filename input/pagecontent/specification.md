@@ -44,7 +44,11 @@ sequenceDiagram
 ## Quick Start Guide
 
 A _Slot Publisher_ hosts not only appointment slots, but also Locations, PractitionerRoles, and Schedules associated with these slots:
-<img src="ERDiagram2.png" alt="Scheduling ER Diagram"/>
+
+<div style="margin: 1rem 0; clear: both;">
+  <img src="ERDiagram2.png" alt="Scheduling ER Diagram"
+       style="display: block; width: 100%; max-width: 900px; height: auto;" />
+</div>
 
 Concretely, a _Slot Publisher_ hosts six kinds of files:
 * **Practitioner, Practitioner Role, Healthcare Service, Location, Schedule, Slot**
