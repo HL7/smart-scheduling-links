@@ -17,7 +17,6 @@
 <artifact id="Location/44981b4a-8eae-48f7-bb7f-bf008bbe05ad" key="Location-44981b4a-8eae-48f7-bb7f-bf008bbe05ad" name="Example Virtual Only Location"/>
 <artifact id="HealthcareService/ExampleHealhCareService" key="HealthcareService-ExampleHealhCareService" name="ExampleHealhCareService"/>
 <artifact id="StructureDefinition/smart-scheduling-healthcare-service" key="StructureDefinition-smart-scheduling-healthcare-service" name="Healthcare Service"/>
-<artifact id="StructureDefinition/licensed-states" key="StructureDefinition-licensed-states" name="Licensed States"/>
 <artifact id="StructureDefinition/smart-scheduling-location" key="StructureDefinition-smart-scheduling-location" name="Location"/>
 <artifact id="CodeSystem/location-physical-type-cs" key="CodeSystem-location-physical-type-cs" name="Location Physical Type CodeSystem"/>
 <artifact id="ValueSet/location-physical-type-vs" key="ValueSet-location-physical-type-vs" name="Location Physical Type ValueSet"/>
@@ -31,7 +30,6 @@
 <artifact id="StructureDefinition/smart-scheduling-slot" key="StructureDefinition-smart-scheduling-slot" name="Slot"/>
 <artifact id="Slot/AcceptNewAndExistingPatients" key="Slot-AcceptNewAndExistingPatients" name="Slot Accepting New and Existing Patients"/>
 <artifact id="Slot/AcceptOnlyExistingPatients" key="Slot-AcceptOnlyExistingPatients" name="Slot Accepting Only Existing Patients"/>
-<artifact id="StructureDefinition/smart-scheduling-virtual-location" key="StructureDefinition-smart-scheduling-virtual-location" name="Virtual Location"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
