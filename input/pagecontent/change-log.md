@@ -4,7 +4,9 @@ Below is a log of changes to the HL7 SMART Scheduling Links FHIR IG.
 
 This release incorporates the reconciliation of comments raised against the May 2026 ballot (1.0.0-ballot), the immediately preceding published release.
 
-At a high level, this release adds support for publishing visit modality through the Location profile and a new extension for distinguishing availability to new versus existing patients; constrains profile references to the profiles defined by this guide; replaces the inline JSON formerly carried in the specification narrative with the profiled FHIR artifacts; and changes the datatype of the booking phone extension, which is not backwards compatible. A required cardinality constraint incorrectly applied to the Location identifier has been removed. The remaining changes are editorial: conformance statement markup, corrections to wording, typographical errors, links, diagrams and page rendering.
+Two changes in this release are not backwards compatible. The booking phone extension now carries a `ContactPoint` rather than a `string`, and the new patient type extension is mandatory on Slot, so every published Slot must now carry it. Publishers working from the ballot version will need to update for both.
+
+The release also adds support for publishing visit modality through the Location profile; points profile references at the profiles defined by this guide; replaces the inline JSON formerly carried in the specification narrative with the profiled FHIR artifacts; removes a required cardinality constraint incorrectly applied to the Location identifier; and resolves the conformance language carried on the informative home page. The remaining changes are editorial: conformance statement markup, corrections to wording, typographical errors, links, diagrams and page rendering.
 
 Changes are classified following the TSC [Change Log Requirements for Specification Releases](https://confluence.hl7.org/spaces/TSC/pages/453917511/Change+Log+Requirements+for+Specification+Releases).
 
@@ -35,9 +37,8 @@ Changes are classified following the TSC [Change Log Requirements for Specificat
 
 #### Compatible, Substantive
 
-- [FHIR-57250](https://jira.hl7.org/browse/FHIR-57250) — Profile references now point at the profiles defined by this guide rather than at the base FHIR resources.
+- [FHIR-57250](https://jira.hl7.org/browse/FHIR-57250) — Profile references now point at the profiles defined by this guide rather than at the base FHIR resources, stating explicitly in the profiles what the guide already required of published files.
 - [FHIR-57321](https://jira.hl7.org/browse/FHIR-57321) — Added support for publishing visit modality. `Location.physicalType` is now must-support and bound to a value set carrying both physical and virtual codes, so a Schedule conveys whether its Slots are virtual through its Location reference. Raised as a request for a Slot-level property; resolved on Location.
-- [FHIR-57322](https://jira.hl7.org/browse/FHIR-57322) — Added the `patient-type` extension so that a Slot can indicate availability to new patients, existing patients, or both. Raised as a request for general-purpose "badges"; resolved as a patient type extension only, with language availability handled by the existing HealthcareService element.
 - [FHIR-57396](https://jira.hl7.org/browse/FHIR-57396) — Replaced the inline JSON structures in the specification narrative with the profiled FHIR artifacts, and promoted the Schedule specialty example into a `schedule-specialty` extension.
 - [FHIR-58064](https://jira.hl7.org/browse/FHIR-58064) — Removed the required cardinality constraint incorrectly applied to `Location.identifier`, which is now optional.
 - [FHIR-59256](https://jira.hl7.org/browse/FHIR-59256) — Resolved the conformance language carried on the informative home page. Statements stated elsewhere in the guide were removed from the home page, and those retained were marked up as conformance clauses so that the home page no longer carries unmarked conformance requirements.
@@ -45,6 +46,7 @@ Changes are classified following the TSC [Change Log Requirements for Specificat
 #### Not-Compatible
 
 - [FHIR-57224](https://jira.hl7.org/browse/FHIR-57224) — The `booking-phone` extension now carries a `ContactPoint` instead of a `string`.
+- [FHIR-57322](https://jira.hl7.org/browse/FHIR-57322) — Added the `patient-type` extension, which is mandatory on Slot, so that a Slot indicates availability to new patients, existing patients, or both. Raised as a request for general-purpose "badges"; resolved as a patient type extension only, with language availability handled by the existing HealthcareService element. Slots published against the ballot version do not carry this extension and are no longer conformant.
 
 ### 1.0.0-ballot
 
