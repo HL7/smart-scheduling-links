@@ -16,10 +16,10 @@ extension:
     valueInteger: 2
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     valueCode: trial-use
-version: 1.0.0-ballot
+version: 1.0.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2026+
-releaseLabel: STU 1 Ballot
+releaseLabel: STU 1
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 publisher:
@@ -87,7 +87,7 @@ menu:
   Specification: specification.html
   Artifacts: artifacts.html
   Downloads: downloads.html
-  Change Log: change_log.html
+  Change Log: change-log.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
