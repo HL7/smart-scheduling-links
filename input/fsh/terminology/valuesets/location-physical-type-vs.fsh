@@ -14,5 +14,5 @@ A value set that defines the physical type of a location but adds the virtual lo
 * ^contact[0].telecom[0].system = #url
 * ^contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/pafm"
 
-* http://terminology.hl7.org/CodeSystem/location-physical-type#vi "Virtual"
+* http://terminology.hl7.org/CodeSystem/location-physical-type|2.0.1#vi "Virtual"
 * include codes from system LocationPhysicalTypeCS
