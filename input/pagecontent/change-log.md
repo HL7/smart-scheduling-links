@@ -26,7 +26,6 @@ Changes are classified following the TSC [Change Log Requirements for Specificat
 - [FHIR-57394](https://jira.hl7.org/browse/FHIR-57394) — Aligned the diagram in Scheduling Architecture at a High Level with the entities described in that section.
 - [FHIR-57395](https://jira.hl7.org/browse/FHIR-57395) — Corrected "scheduled" to "Schedule" in the list of published file types.
 - [FHIR-57897](https://jira.hl7.org/browse/FHIR-57897) — Removed text in the Find, Hold and Book section that had been carried over from an earlier branch in error.
-- [FHIR-58064](https://jira.hl7.org/browse/FHIR-58064) — Removed the required cardinality constraint incorrectly applied to `Location.identifier`.
 - [FHIR-59257](https://jira.hl7.org/browse/FHIR-59257) — Added a plain-language description of the guide to the HL7 plain-language repository.
 - [FHIR-59258](https://jira.hl7.org/browse/FHIR-59258) — Adopted the IG Publisher conformance statement markup and added a Conformance page listing every conformance statement in the guide.
 - [FHIR-59259](https://jira.hl7.org/browse/FHIR-59259) — Corrected heading levels, code fences, quote characters and table rendering on the Specification page.
@@ -40,6 +39,7 @@ Changes are classified following the TSC [Change Log Requirements for Specificat
 - [FHIR-57321](https://jira.hl7.org/browse/FHIR-57321) — Added support for publishing visit modality. `Location.physicalType` is now must-support and bound to a value set carrying both physical and virtual codes, so a Schedule conveys whether its Slots are virtual through its Location reference. Raised as a request for a Slot-level property; resolved on Location.
 - [FHIR-57322](https://jira.hl7.org/browse/FHIR-57322) — Added the `patient-type` extension so that a Slot can indicate availability to new patients, existing patients, or both. Raised as a request for general-purpose "badges"; resolved as a patient type extension only, with language availability handled by the existing HealthcareService element.
 - [FHIR-57396](https://jira.hl7.org/browse/FHIR-57396) — Replaced the inline JSON structures in the specification narrative with the profiled FHIR artifacts, and promoted the Schedule specialty example into a `schedule-specialty` extension.
+- [FHIR-58064](https://jira.hl7.org/browse/FHIR-58064) — Removed the required cardinality constraint incorrectly applied to `Location.identifier`, which is now optional.
 
 #### Not-Compatible
 
