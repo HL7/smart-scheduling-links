@@ -234,7 +234,7 @@ For example, given this Location resource from an underlying source:
   "name": "Berkshire Family Medicine - Pittsfield",
   // additional Location fields here...
 }
-```js
+```
 
 A _Slot Aggregator_ might publish a Location like:
 
@@ -283,8 +283,7 @@ For example, given the above example resource at `https://api.flynnspharmacy.exa
   "name": "Flynn's Pharmacy in Pittsfield, MA",
   // additional Location fields here...
 }
-
-
+```
 
 ### Indicate Data “Freshness”
 
