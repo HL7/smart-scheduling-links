@@ -40,6 +40,7 @@ Changes are classified following the TSC [Change Log Requirements for Specificat
 - [FHIR-57322](https://jira.hl7.org/browse/FHIR-57322) — Added the `patient-type` extension so that a Slot can indicate availability to new patients, existing patients, or both. Raised as a request for general-purpose "badges"; resolved as a patient type extension only, with language availability handled by the existing HealthcareService element.
 - [FHIR-57396](https://jira.hl7.org/browse/FHIR-57396) — Replaced the inline JSON structures in the specification narrative with the profiled FHIR artifacts, and promoted the Schedule specialty example into a `schedule-specialty` extension.
 - [FHIR-58064](https://jira.hl7.org/browse/FHIR-58064) — Removed the required cardinality constraint incorrectly applied to `Location.identifier`, which is now optional.
+- [FHIR-59256](https://jira.hl7.org/browse/FHIR-59256) — Resolved the conformance language carried on the informative home page. Statements stated elsewhere in the guide were removed from the home page, and those retained were marked up as conformance clauses so that the home page no longer carries unmarked conformance requirements.
 
 #### Not-Compatible
 
