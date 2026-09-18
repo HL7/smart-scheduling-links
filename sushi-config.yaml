@@ -87,7 +87,7 @@ menu:
   Specification: specification.html
   Artifacts: artifacts.html
   Downloads: downloads.html
-  Change Log: change-log.html
+  Change Log: change_log.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
