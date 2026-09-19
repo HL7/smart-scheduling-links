@@ -70,7 +70,8 @@ dependencies:
 # For parameters defined by the FHIR Tools IG see:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
-# parameters:
+parameters:
+  auto-oid-root: 2.16.840.1.113883.4.642.40.91
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #
