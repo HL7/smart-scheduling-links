@@ -35,6 +35,7 @@
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="change-log" name="Change Log"/>
+<page key="conformance" name="Conformance"/>
 <page key="downloads" name="Downloads"/>
 <page key="index" name="Home"/>
 <page key="specification" name="Specification"/>
