@@ -69,38 +69,36 @@ Concretely, a _Slot Publisher_ hosts six kinds of files:
   * [Example file](https://raw.githubusercontent.com/smart-on-fhir/smart-scheduling-links/master/examples/schedules.ndjson) showing ten schedules schedules for "SMART Primary Care" and ten schedules for "SMART Urgent Care." Each line provides details about a single schedule.
 * **Slot Files**.  Each line contains a minified JSON object representing an appointment slot (busy or free) for a healthcare service at a specific location.
   * [Slot profile](https://build.fhir.org/ig/HL7/smart-scheduling-links/en/StructureDefinition-smart-scheduling-slot.html)
-  * [Example file](https://raw.githubusercontent.com/smart-on-fhir/smart-scheduling-links/master/examples/slots-2021-W09.ndjson) showing coarse-grained slots for a single week, across all twenty "SMART Medicine" sites. (_Note: The choice to break down slots into weekly files is arbitrary; the fictional Clinic could instead choose to host a single slot file, or produce location-specific files, or even group slots randomly._) In this example the slots carry only coarse-grained timing, indicating that they fall sometime between 9a and 6p ET, the clinic's fictional hours of operation.
+  * [Example file](https://raw.githubusercontent.com/smart-on-fhir/smart-scheduling-links/master/examples/slots-2021-W09.ndjson) showing coarse-grained slots for a single week, across all twenty "SMART Medicine" sites. (_Note: The choice to break down slots into weekly files is arbitrary; the fictional Clinic could instead choose to host a single slot file, or produce location-specific files, or even group slots randomly._) Slots MAY include only coarse-grained timing (indicating they fall sometime beetween 9a and 6p ET, the clinic's fictional hours of operation). Ideally, Slot Publishers SHOULD provide finer-grained slot information with specific timing.
 
-§sched-10: Slots **MAY** include only coarse-grained timing. _Slot Publishers_ **SHOULD** provide finer-grained slot information with specific timing where it is available.§
-
-A client queries the manifest on a regular basis, e.g. once every 1-5 minutes. The client iterates through the links in the manifest file to retrieve any PractitionerRole, Location, Schedule, or Slot files it is interested in. §sched-11: Clients **SHOULD** ignore any output items with types other than PractitionerRole, Location, Schedule, or Slot.§
+A client queries the manifest on a regular basis, e.g. once every 1-5 minutes. The client iterates through the links in the manifest file to retrieve any PractitionerRole, Location, Schedule, or Slot files it is interested in. (Clients SHOULD ignore any output items with types other than PractitionerRole, Location, Schedule, or Slot.)
 
 ##### Timestamps
 
-§sched-1: Wherever "timestamps" are used in this specification, they **SHALL** be in the format `YYYY-MM-DDThh:mm:ss.sss+zz:zz` (e.g. `2015-02-07T13:28:17.239+02:00` or `2017-01-01T00:00:00Z`). The time **SHALL** be specified at least to the second and **SHALL** include a time zone offset (for UTC, the offset **MAY** be `Z`).§ These timestamps match [FHIR's "instant" format][fhir-instant], and are also valid ISO 8601 timestamps.
+Wherever "timestamps" are used in this specification, they SHALL be in the format `YYYY-MM-DDThh:mm:ss.sss+zz:zz` (e.g. `2015-02-07T13:28:17.239+02:00` or `2017-01-01T00:00:00Z`). The time SHALL specified at least to the second and SHALL include a time zone offset (for UTC, the offset MAY be `Z`). These timestamps match [FHIR's "instant" format][fhir-instant], and are also valid ISO 8601 timestamps.
 
 ##### `Accept` Headers
-§sched-2: For Bulk Publication Manifest requests, servers **SHALL** support at least the following `Accept` headers from a client, returning the same FHIR JSON payload in all cases:§
+For Bulk Publication Manifest requests, servers SHALL support at least the following `Accept` headers from a client, returning the same FHIR JSON payload in all cases:
 
 1. No `Accept` header present
-2. `Accept: application/json`
+1. `Accept: application/json`
 
-§sched-3: For Bulk Output File requests, servers **SHALL** support at least the following `Accept` headers from a client, returning the same FHIR NDJSON payload in all cases:§
+For Bulk Output File requests, servers SHALL support at least the following `Accept` headers from a client, returning the same FHIR NDJSON payload in all cases:
 
 1. No `Accept` header present
-2. `Accept: application/fhir+ndjson`
+1. `Accept: application/fhir+ndjson`
 
 ##### Performance Considerations
 
-* §sched-4: _Slot Publishers_ **SHOULD** annotate each output with a list of states or jurisdictions as a hint to clients, allowing clients to focus on fetching data for the specific states or geographical regions where they operate;§ this is helpful for clients with limited regions of interest.
-* §sched-5: _Slot Publishers_ **SHOULD** include a [`Cache-Control: max-age=<seconds>` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) as a hint to clients about how long (in seconds) to wait before polling next.§ For example, `Cache-Control: max-age=300` indicates a preferred polling interval of five minutes.
-* §sched-6: Clients **SHOULD NOT** request a manifest or any individual data file more than once per minute.§
-* §sched-7: Clients **MAY** include standard HTTP headers such as `If-None-Match` or `If-Modified-Since` with each query to prevent retrieving data when nothing has changed since the last query.§
-* §sched-8: Clients **MAY** include a `?_since={}` query parameter with a [timestamp](#timestamps) when retrieving a manifest file to request only changes since a particular point in time.§ Servers are free to ignore this parameter, meaning that clients should be prepared to retrieve a full data set.
+* _Slot Publishers_ SHOULD annotate each output with a list of states or jurisdictions as a hint to clients, allowing clients to focus on fetching data for the specific states or geographical regions where they operate; this is helpful for clients with limited regions of interest.
+* _Slot Publishers_ SHOULD include a [`Cache-Control: max-age=<seconds>` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) as a hint to clients about how long (in seconds) to wait before polling next. For example, `Cache-Control: max-age=300` indicates a preferred polling interval of five minutes.
+* Clients SHOULD NOT request a manifest or any individual data file more than once per minute
+* Clients MAY include standard HTTP headers such as `If-None-Match` or `If-Modified-Since` with each query to prevent retrieving data when nothing has changed since the last query.
+* Clients MAY include a `?_since={}` query parameter with a [timestamp](#timestamps) when retrieving a manifest file to request only changes since a particular point in time. Servers are free to ignore this parameter, meaning that clients should be prepared to retrieve a full data set.
 
 ##### Access Control Considerations
 
-* §sched-9: _Slot Publishers_ **SHOULD** host `$bulk-publish` content at open, publicly accessible endpoints when sharing general healthcare appointment availability (no required access keys or client credentials).§ This pattern ensures that data can be used widely and without pre-coordination to meet public health and consumer access use cases.
+* _Slot Publishers_ SHOULD host `$bulk-publish` content at open, publicly accessible endpoints when sharing general healthcare appointment availability (no required access keys or client credentials). This pattern ensures that data can be used widely and without pre-coordination to meet public health and consumer access use cases.
   * These data will be publicly available downstream in consumer-facing apps, so confidentiality is a non-goal.
   * Healthcare access goals require flexibility in access to non-confidential scheduling information.
   * With the `$bulk-publish` pattern, _Slot Publishers_ host static files, which scale well to open publication
@@ -208,20 +206,20 @@ Slot data discovered by a _Slot Discovery Client_ may no longer be valid by the 
 
 This specification intentionally does not prescribe how each source of invalidity should be handled, because the appropriate response depends on the implementation context. Instead, it establishes a clear division of responsibility:
 
-- **Slot Publishers**: §sched-12: _Slot Publishers_ **SHOULD** provide data with sufficient freshness to minimize staleness§ (see [Performance Considerations](#performance-considerations) for Cache-Control guidance). §sched-13: When publishing a Slot with `"status": "free"`, _Slot Publishers_ **SHOULD** ensure the Slot is available for booking given current business rules.§
-- **Slot Discovery Clients** and **Slot Aggregators**: §sched-14: _Slot Discovery Clients_ and _Slot Aggregators_ **MAY** enrich or filter slot data with additional attributes — such as insurance network, patient demographics, or geographic constraints — to improve the relevance of results for their users.§
-- **Provider Booking Portals** are the primary backstop. As the system closest to (or identical with) the source of truth, the booking portal is best positioned to detect and handle any form of slot invalidity directly with the user. §sched-15: _Provider Booking Portals_ **SHOULD** handle invalid slots gracefully, preserving as much of the user's original intent as possible.§ §sched-16: Where a specific time slot is no longer available, the _Provider Booking Portal_ **SHOULD** present remaining slots on or near the originally selected time and day, rather than simply displaying an error.§
+- **Slot Publishers** SHOULD provide data with sufficient freshness to minimize staleness (see [Performance Considerations](#performance-considerations) for Cache-Control guidance). When publishing a Slot with `"status": "free"`, Publishers should ensure the Slot is available for booking given current business rules.
+- **Slot Discovery Clients** and **Slot Aggregators** MAY enrich or filter slot data with additional attributes — such as insurance network, patient demographics, or geographic constraints — to improve the relevance of results for their users.
+- **Provider Booking Portals** are the primary backstop. As the system closest to (or identical with) the source of truth, the booking portal is best positioned to detect and handle any form of slot invalidity directly with the user. Provider Booking Portals SHOULD handle invalid slots gracefully, preserving as much of the user's original intent as possible. For example, if a specific time slot is no longer available, the booking portal SHOULD present remaining slots on or near the originally selected time and day, rather than simply displaying an error.
 
 This model parallels the [airline booking analogy](index.html#discovery-analogy-airline-booking): a travel search tool may surface a flight that is no longer available by the time the user clicks through to the airline's site, but the airline's booking system handles this gracefully by presenting close alternatives. The same user experience expectation applies here.
 
 #### Slot Aggregators
 
-Systems that re-publish data from other _Slot Publishers_ are referred to as _Slot Aggregators_. If you are a _Slot Aggregator_, you may wish to use some additional extensions and FHIR features to supply useful provenance information or describe ways that your aggregated data may not exactly match the definitions in the _SMART Scheduling Links_ specification. The practices and approaches in this section are _recommendations_, with the single exception of the constraint on the "Has Availability" extension noted under [Describe Unknown Availability, Capacity, or Slot Times](#describe-unknown-availability-capacity-or-slot-times).
+Systems that re-publish data from other _Slot Publishers_ are referred to as _Slot Aggregators_. If you are a _Slot Aggregator_, you may wish to use some additional extensions and FHIR features to supply useful provenance information or describe ways that your aggregated data may not exactly match the definitions in the _SMART Scheduling Links_ specification. The practices and approaches in this section are _recommendations_; none are _required_ for a valid implementation.
 
 
 ##### Preserve Source Identifiers
 
-_Slot Aggregators_ usually need to assign new `id` values to resources in order to make sure they are unique across the aggregated dataset. We recommend preserving the `id` of the original resource in the `identifier` list, alongside the identifiers from the original resource. The specific `system` and `value` used for the identifier is left up to the implementer.
+_Slot Aggregators_ usually need to assign new `id` values to resources in order to make sure they are unique across the aggregated dataset. The `id` of the original resource SHOULD be preserved in the `identifier` list, alongside the identifiers from the original resource. The specific `system` and `value` used for the identifier is left up to the implementer.
 
 For example, given this Location resource from an underlying source:
 
@@ -261,9 +259,9 @@ A _Slot Aggregator_ might publish a Location like:
 }
 ```
 
-In this example, `https://berkshirefamilymedicine.example.org/` is an arbitrary string that defines "Flynn's Pharmacy" as the identifier system. A URL that is not under the aggregator's control is best reserved for cases where the URL is predictable and might reasonably be chosen by other _Slot Aggregators_. Otherwise, we recommend choosing a URL under the aggregator's own control. For example, an aggregator at `usdr.example.org` might choose a URL like `https://usdr.example.org/fhir/identifiers/flynns`.
+In this example, `https://berkshirefamilymedicine.example.org/` is an arbitrary string that defines "Flynn's Pharmacy" as the identifier system. _Slot Aggregators_ should only use a URL that is not under their control in cases where the URL is predictable and might reasonably be chosen by other _Slot Aggregators_. When this is not the case, _Slot Aggregators_ SHOULD choose a URL under their control. For example, an aggregator at `usdr.example.org` might choose a URL like `https://usdr.example.org/fhir/identifiers/flynns`.
 
-When the source system is a SMART Scheduling Links implementation, we recommend describing it with [FHIR's `Resource.meta.source` field][resource_meta]. The value is a URI that typically includes the URL of the source system, and may add the resource `id`.
+When the source system is a SMART Scheduling Links implementation, a _Slot Aggregator_ SHOULD use [FHIR's `Resource.meta.source` field][resource_meta] to describe it. The value is a URI that SHOULD include the URL of the source system, and MAY add the resource `id`.
 
 For example, given the above example resource at `https://api.flynnspharmacy.example.org/fhir/smart-scheduling/$bulk-publish`, a _Slot Aggregator_ might publish a location like:
 
@@ -291,7 +289,7 @@ For example, given the above example resource at `https://api.flynnspharmacy.exa
 
 ##### Indicate Data "Freshness"
 
-Aggregators may request or receive information from publishers at different times, and understanding how recently data about a Location, Schedule, or Slot was retrieved can help end users gauge the accuracy of items in an aggregated dataset. We recommend using the `lastSourceSync` extension on the `meta` field of any resource to indicate the last time at which the data was known to be accurate:
+Aggregators may request or receive information from publishers at different times, and understanding how recently data about a Location, Schedule, or Slot was retrieved can help end users gauge the accuracy of items in an aggregated dataset. _Slot Aggregators_ SHOULD use the `lastSourceSync` extension on the `meta` field of any resource to indicate the last time at which the data was known to be accurate:
 
 ```js
 {
@@ -313,7 +311,7 @@ Because source systems may experience errors or may not conform to the SMART Sch
 - Whether any Slots are associated with the Schedule is unknown (e.g. because a source system is unreachable),
 - The capacity or times of Slots are unknown (e.g. slots are known to be free or busy only _at some time_ in the near future).
 
-Use the **optional "Has Availability" extension** to convey that a Schedule has non-zero or unknown future availability, without conveying details about when or how much. §sched-17: When the "Has Availability" extension is used on a Schedule, that Schedule **MAY** have no associated Slots.§ §sched-18: _Slot Publishers_ **SHALL NOT** use this capability in place of publishing granular Slots;§ it is defined to support _Slot Aggregators_ (i.e. systems that re-publish Slot data from other APIs).
+Use the **optional "Has Availability" extension** to convey that a Schedule has non-zero or unknown future availability, without conveying details about when or how much. When used on a Schedule, that Schedule MAY have no associated Slots. _Slot Publishers_ SHALL NOT use this capacity in place of publishing granular Slots; it is defined to support Slot Aggregators (i.e. systems that re-publish Slot data from other APIs).
 
 | field name | type  | description |
 |---|---|---|

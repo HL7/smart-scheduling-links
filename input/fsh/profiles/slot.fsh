@@ -4,11 +4,10 @@ Id: smart-scheduling-slot
 Title: "Slot"
 Description: """
 Each line of the Slot File is a minified JSON object that conveys information 
-about an appointment slot. Slots may carry fine-grained timing details (e.g. 
-representing appointments at specific times of the day) or coarse-grained 
-timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m."). 
-See [Quick Start Guide](specification.html#quick-start-guide) in the 
-specification for the normative expectations on timing granularity.
+about an appointment slot. Publishers are encouraged to represent slots with 
+fine-grained timing details (e.g. representing appointments at specific times 
+of the day), but MAY represent slots with coarse grained 
+timing (e.g., "between 9 a.m. and 5 p.m." or "between noon and five p.m.").
 """
 
 // Note that there is no US Core 6.1.0 Slot profile
