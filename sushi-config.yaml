@@ -86,7 +86,6 @@ parameters:
 menu:
   Home: index.html
   Specification: specification.html
-  Conformance: conformance.html
   Artifacts: artifacts.html
   Downloads: downloads.html
   Change Log: change-log.html

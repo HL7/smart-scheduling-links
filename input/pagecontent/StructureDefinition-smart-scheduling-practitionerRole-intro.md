@@ -25,8 +25,8 @@ The following data elements must always be present or must be supported if the d
 
 Each `identifier` object includes a `system` and a `value`. 
 
-* §sched-19: If a PractitionerRole is associated with organization-specific identifiers (such as role-specific employee numbers, provider numbers, or location-specific identifiers), _Slot Publishers_ **SHOULD** include these.§ The `system` should be a URL that identifies the identifier system, preferably a page on the publisher's web site (e.g. `{"system": "https://healthsystem.example.com/practitioner-role-directory", "value": "ROLE-123"}`)
+* If a PractitionerRole is associated with organization-specific identifiers (such as role-specific employee numbers, provider numbers, or location-specific identifiers), publishers SHOULD include these. The `system` should be a URL that identifies the identifier system, preferably a page on the publisher's web site (e.g. `{"system": "https://healthsystem.example.com/practitioner-role-directory", "value": "ROLE-123"}`)
 
-* §sched-20: If a PractitionerRole participates in external registry programs that assign role-specific identifiers, _Slot Publishers_ **MAY** include these identifiers using the appropriate system URL for the registry.§
+* If a PractitionerRole participates in external registry programs that assign role-specific identifiers, publishers MAY include these identifiers using the appropriate system URL for the registry.
 
-* §sched-21: Any number of additional identifiers **MAY** be included.§ Each should populate `system` and `value` as appropriate, following FHIR identifier conventions.
+* Additional identifiers: Any number of additional identifiers MAY be included. Each should populate `system` and `value` as appropriate, following FHIR identifier conventions.
