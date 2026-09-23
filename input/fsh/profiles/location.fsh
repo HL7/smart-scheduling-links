@@ -75,7 +75,7 @@ Usage: #example
 * address.postalCode = "33602"
 * address.district = "Hillsborough"
 
-* physicalType = LocationPhysicalTypeCS#ph
+* physicalType = Temporary#ph
 
 * description = "Primary outpatient clinic offering general services."
 
