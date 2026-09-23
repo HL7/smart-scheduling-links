@@ -19,7 +19,7 @@
 <artifact id="HealthcareService/ExampleHealhCareService" key="HealthcareService-ExampleHealhCareService" name="ExampleHealhCareService"/>
 <artifact id="StructureDefinition/smart-scheduling-healthcare-service" key="StructureDefinition-smart-scheduling-healthcare-service" name="Healthcare Service"/>
 <artifact id="StructureDefinition/smart-scheduling-location" key="StructureDefinition-smart-scheduling-location" name="Location"/>
-<artifact id="CodeSystem/location-physical-type-cs" key="CodeSystem-location-physical-type-cs" name="Location Physical Type CodeSystem"/>
+<artifact deprecated="true" id="CodeSystem/location-physical-type-cs" key="CodeSystem-location-physical-type-cs" name="Location Physical Type CodeSystem"/>
 <artifact id="ValueSet/location-physical-type-vs" key="ValueSet-location-physical-type-vs" name="Location Physical Type ValueSet"/>
 <artifact id="Organization/c3453010-d1ae-4180-937e-86cc11292693" key="Organization-c3453010-d1ae-4180-937e-86cc11292693" name="Organization example"/>
 <artifact id="StructureDefinition/patient-type" key="StructureDefinition-patient-type" name="Patient Type"/>
@@ -31,6 +31,7 @@
 <artifact id="StructureDefinition/smart-scheduling-slot" key="StructureDefinition-smart-scheduling-slot" name="Slot"/>
 <artifact id="Slot/AcceptNewAndExistingPatients" key="Slot-AcceptNewAndExistingPatients" name="Slot Accepting New and Existing Patients"/>
 <artifact id="Slot/AcceptOnlyExistingPatients" key="Slot-AcceptOnlyExistingPatients" name="Slot Accepting Only Existing Patients"/>
+<artifact id="CodeSystem/temporary" key="CodeSystem-temporary" name="Temporary CodeSystem"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
