@@ -11,7 +11,10 @@ This guide explains how a _Slot Publisher_ makes appointment slots available acr
 
 #### Scheduling Architecture at a High Level
 
- <img src="SchedulingArchitecture.drawio.png" alt="Scheduling ER Diagram"/>
+<div style="margin: 1rem 0; clear: both;">
+  <img src="SchedulingArchitecture.drawio.png" alt="Scheduling ER Diagram"
+       style="display: block; max-width: 100%; height: auto;" />
+</div>
 
  **Key Actors**
 
