@@ -51,9 +51,20 @@ dependencies:
 # with supported extensions (e.g., .md/.xml) will be treated as
 # sub-pages.
 #
-# pages:
-#   index.md:
-#     title: Example Home
+pages:
+  index.md:
+    title: Home
+  change-log.md:
+    title: Change Log
+  conformance.md:
+    title: Conformance
+  downloads.md:
+    title: Downloads
+  specification.md:
+    title: Specification
+    extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
 #   implementation.xml:
 #   examples.xml:
 #     title: Examples Overview
