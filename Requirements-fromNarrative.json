@@ -6,5 +6,130 @@
   "title" : "Narrative Conformance Statements",
   "status" : "active",
   "experimental" : false,
-  "description" : "Conformance statements found throughout the narrative of the IG consolidated into this computable resource for traceability purposes"
+  "description" : "Conformance statements found throughout the narrative of the IG consolidated into this computable resource for traceability purposes",
+  "statement" : [{
+    "key" : "sched-1",
+    "conformance" : ["SHALL",
+    "MAY"],
+    "requirement" : "Wherever \"timestamps\" are used in this specification, they **SHALL** be in the format `YYYY-MM-DDThh:mm:ss.sss+zz:zz` (e.g. `2015-02-07T13:28:17.239+02:00` or `2017-01-01T00:00:00Z`). The time **SHALL** be specified at least to the second and **SHALL** include a time zone offset (for UTC, the offset **MAY** be `Z`)."
+  },
+  {
+    "key" : "sched-2",
+    "conformance" : ["SHALL"],
+    "requirement" : "For Bulk Publication Manifest requests, servers **SHALL** support at least the following `Accept` headers from a client, returning the same FHIR JSON payload in all cases:"
+  },
+  {
+    "key" : "sched-3",
+    "conformance" : ["SHALL"],
+    "requirement" : "For Bulk Output File requests, servers **SHALL** support at least the following `Accept` headers from a client, returning the same FHIR NDJSON payload in all cases:"
+  },
+  {
+    "key" : "sched-4",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**Slot Publishers** **SHOULD** annotate each output with a list of states or jurisdictions as a hint to clients, allowing clients to focus on fetching data for the specific states or geographical regions where they operate;"
+  },
+  {
+    "key" : "sched-5",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**Slot Publishers** **SHOULD** include a [`Cache-Control: max-age=<seconds>` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) as a hint to clients about how long (in seconds) to wait before polling next."
+  },
+  {
+    "key" : "sched-6",
+    "conformance" : ["SHOULD-NOT"],
+    "requirement" : "Clients **SHOULD NOT** request a manifest or any individual data file more than once per minute."
+  },
+  {
+    "key" : "sched-7",
+    "conformance" : ["MAY"],
+    "requirement" : "Clients **MAY** include standard HTTP headers such as `If-None-Match` or `If-Modified-Since` with each query to prevent retrieving data when nothing has changed since the last query."
+  },
+  {
+    "key" : "sched-8",
+    "conformance" : ["MAY"],
+    "requirement" : "Clients **MAY** include a `?_since={}` query parameter with a [timestamp](specification.html#timestamps) when retrieving a manifest file to request only changes since a particular point in time."
+  },
+  {
+    "key" : "sched-9",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**Slot Publishers** **SHOULD** host `$bulk-publish` content at open, publicly accessible endpoints when sharing general healthcare appointment availability (no required access keys or client credentials)."
+  },
+  {
+    "key" : "sched-10",
+    "conformance" : ["SHOULD",
+    "MAY"],
+    "requirement" : "Slots **MAY** include only coarse-grained timing. **Slot Publishers** **SHOULD** provide finer-grained slot information with specific timing where it is available."
+  },
+  {
+    "key" : "sched-11",
+    "conformance" : ["SHOULD"],
+    "requirement" : "Clients **SHOULD** ignore any output items with types other than PractitionerRole, Location, Schedule, or Slot."
+  },
+  {
+    "key" : "sched-12",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**Slot Publishers** **SHOULD** provide data with sufficient freshness to minimize staleness"
+  },
+  {
+    "key" : "sched-13",
+    "conformance" : ["SHOULD"],
+    "requirement" : "When publishing a Slot with `\"status\": \"free\"`, **Slot Publishers** **SHOULD** ensure the Slot is available for booking given current business rules."
+  },
+  {
+    "key" : "sched-14",
+    "conformance" : ["MAY"],
+    "requirement" : "**Slot Discovery Clients** and **Slot Aggregators** **MAY** enrich or filter slot data with additional attributes — such as insurance network, patient demographics, or geographic constraints — to improve the relevance of results for their users."
+  },
+  {
+    "key" : "sched-15",
+    "conformance" : ["SHOULD"],
+    "requirement" : "**Provider Booking Portals** **SHOULD** handle invalid slots gracefully, preserving as much of the user's original intent as possible."
+  },
+  {
+    "key" : "sched-16",
+    "conformance" : ["SHOULD"],
+    "requirement" : "Where a specific time slot is no longer available, the **Provider Booking Portal** **SHOULD** present remaining slots on or near the originally selected time and day, rather than simply displaying an error."
+  },
+  {
+    "key" : "sched-17",
+    "conformance" : ["MAY"],
+    "requirement" : "When the \"Has Availability\" extension is used on a Schedule, that Schedule **MAY** have no associated Slots."
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot",
+      "valueBoolean" : true
+    }],
+    "key" : "sched-18",
+    "requirement" : "**Slot Publishers** **SHALL NOT** use this capability in place of publishing granular Slots;"
+  },
+  {
+    "key" : "sched-19",
+    "conformance" : ["SHOULD"],
+    "requirement" : "If a PractitionerRole is associated with organization-specific identifiers (such as role-specific employee numbers, provider numbers, or location-specific identifiers), **Slot Publishers** **SHOULD** include these."
+  },
+  {
+    "key" : "sched-20",
+    "conformance" : ["MAY"],
+    "requirement" : "If a PractitionerRole participates in external registry programs that assign role-specific identifiers, **Slot Publishers** **MAY** include these identifiers using the appropriate system URL for the registry."
+  },
+  {
+    "key" : "sched-21",
+    "conformance" : ["MAY"],
+    "requirement" : "Any number of additional identifiers **MAY** be included."
+  },
+  {
+    "key" : "sched-22",
+    "conformance" : ["SHOULD"],
+    "requirement" : "If a Location is associated with organization-specific identifiers (such as facility numbers, site codes, or store numbers), **Slot Publishers** **SHOULD** include these."
+  },
+  {
+    "key" : "sched-23",
+    "conformance" : ["MAY"],
+    "requirement" : "If a Location participates in external registry programs that assign location identifiers, **Slot Publishers** **MAY** include these identifiers using the appropriate system URL for the registry."
+  },
+  {
+    "key" : "sched-24",
+    "conformance" : ["MAY"],
+    "requirement" : "Any number of additional identifiers **MAY** be included."
+  }]
 }
