@@ -8,7 +8,10 @@ Two changes are not backwards compatible: the booking phone extension now carrie
 
 Changes are classified following the TSC [Change Log Requirements for Specification Releases](https://confluence.hl7.org/spaces/TSC/pages/453917511/Change+Log+Requirements+for+Specification+Releases).
 
+#### Not-Compatible
 
+- [FHIR-57224](https://jira.hl7.org/browse/FHIR-57224) - Changed the `booking-phone` extension from `string` to `ContactPoint`
+- [FHIR-57322](https://jira.hl7.org/browse/FHIR-57322) - Added a mandatory `patient-type` extension on Slot for new versus existing patient availability
 
 #### Compatible, Substantive
 
@@ -18,10 +21,7 @@ Changes are classified following the TSC [Change Log Requirements for Specificat
 - [FHIR-58064](https://jira.hl7.org/browse/FHIR-58064) - Made `Location.identifier` optional
 - [FHIR-59256](https://jira.hl7.org/browse/FHIR-59256) - Removed or marked up the conformance language on the informative home page
 
-#### Not-Compatible
 
-- [FHIR-57224](https://jira.hl7.org/browse/FHIR-57224) - Changed the `booking-phone` extension from `string` to `ContactPoint`
-- [FHIR-57322](https://jira.hl7.org/browse/FHIR-57322) - Added a mandatory `patient-type` extension on Slot for new versus existing patient availability
 
 #### Non-Substantive
 
