@@ -8,6 +8,21 @@ Two changes are not backwards compatible: the booking phone extension now carrie
 
 Changes are classified following the TSC [Change Log Requirements for Specification Releases](https://confluence.hl7.org/spaces/TSC/pages/453917511/Change+Log+Requirements+for+Specification+Releases).
 
+#### Not-Compatible
+
+- [FHIR-57224](https://jira.hl7.org/browse/FHIR-57224) - Changed the `booking-phone` extension from `string` to `ContactPoint`
+- [FHIR-57322](https://jira.hl7.org/browse/FHIR-57322) - Added a mandatory `patient-type` extension on Slot for new versus existing patient availability
+
+#### Compatible, Substantive
+
+- [FHIR-57250](https://jira.hl7.org/browse/FHIR-57250) - Pointed profile references at this guide's profiles rather than the base resources
+- [FHIR-57321](https://jira.hl7.org/browse/FHIR-57321) - Added virtual visit support by making `Location.physicalType` must-support and binding it to a value set carrying physical and virtual codes
+- [FHIR-57396](https://jira.hl7.org/browse/FHIR-57396) - Replaced the inline JSON in the specification with the profiled artifacts and added the `schedule-specialty` extension
+- [FHIR-58064](https://jira.hl7.org/browse/FHIR-58064) - Made `Location.identifier` optional
+- [FHIR-59256](https://jira.hl7.org/browse/FHIR-59256) - Removed or marked up the conformance language on the informative home page
+
+
+
 #### Non-Substantive
 
 - [FHIR-56794](https://jira.hl7.org/browse/FHIR-56794) - Corrected typos in the Introduction
@@ -32,20 +47,6 @@ Changes are classified following the TSC [Change Log Requirements for Specificat
 - [FHIR-59260](https://jira.hl7.org/browse/FHIR-59260) - Pinned the location physical type terminology version and repaired stale QA suppressions
 - [FHIR-59261](https://jira.hl7.org/browse/FHIR-59261) - Updated the publication request for STU 1
 - [FHIR-59264](https://jira.hl7.org/browse/FHIR-59264) - Rebuilt this change log from the Jira tickets resolved since the ballot
-
-#### Compatible, Substantive
-
-- [FHIR-57250](https://jira.hl7.org/browse/FHIR-57250) - Pointed profile references at this guide's profiles rather than the base resources
-- [FHIR-57321](https://jira.hl7.org/browse/FHIR-57321) - Added virtual visit support by making `Location.physicalType` must-support and binding it to a value set carrying physical and virtual codes
-- [FHIR-57396](https://jira.hl7.org/browse/FHIR-57396) - Replaced the inline JSON in the specification with the profiled artifacts and added the `schedule-specialty` extension
-- [FHIR-58064](https://jira.hl7.org/browse/FHIR-58064) - Made `Location.identifier` optional
-- [FHIR-59256](https://jira.hl7.org/browse/FHIR-59256) - Removed or marked up the conformance language on the informative home page
-
-#### Not-Compatible
-
-- [FHIR-57224](https://jira.hl7.org/browse/FHIR-57224) - Changed the `booking-phone` extension from `string` to `ContactPoint`
-- [FHIR-57322](https://jira.hl7.org/browse/FHIR-57322) - Added a mandatory `patient-type` extension on Slot for new versus existing patient availability
-
 ### 1.0.0-ballot
 
 This publication represents the initial release of the specification.
